@@ -29,7 +29,7 @@ deploy_dev:
   script:
     - ssh-add <(echo "$DEPLOY_KEY")
     # pull develop & composer install
-    - ssh "$DEV_SSH_USERNAME"@"$DEV_SSH_HOST" -v "cd /home/sites_manuel/openstudio-lab.com/mb/public_html ; nursit-root site:chmod && rm -rf var/cache/* && git pull origin develop && php8.1 composer.phar install && rm -rf web/assets  && cp -f web/.htaccess.dev web/.htaccess" # clean old dist
+    - ssh "$DEV_SSH_USERNAME"@"$DEV_SSH_HOST" -v "cd /home/sites_manuel/openstudio-lab.com/mb/public_html ; nursit-root site:chmod && rm -rf var/cache/* && git pull origin develop && php8.2 composer.phar install && rm -rf web/assets" # clean old dist
     - ssh "$DEV_SSH_USERNAME"@"$DEV_SSH_HOST" -v "cd /home/sites_manuel/openstudio-lab.com/mb/public_html ; rm -rf templates/frontOffice/menuiserieblanc/dist ; nursit-root site:chmod"
     # transfer new dist
     - rsync -arv ./templates/frontOffice/menuiserieblanc/dist $DEV_SSH_USERNAME@$DEV_SSH_HOST:/home/sites_manuel/openstudio-lab.com/mb/public_html/templates/frontOffice/menuiserieblanc/
