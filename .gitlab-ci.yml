@@ -1,4 +1,4 @@
-image: node:lts-gallium
+image: node:lts-bullseye
 
 cache:
   key: one-key-to-rule-them-all
