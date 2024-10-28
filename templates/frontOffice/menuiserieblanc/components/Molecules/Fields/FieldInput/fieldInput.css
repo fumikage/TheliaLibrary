@@ -1,0 +1,188 @@
+.FieldInput {
+  display: flex;
+  flex-direction: column;
+  gap: rem-convert(4px);
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-label {
+    @apply paragraph-4;
+    color: var(--theme-darkest);
+  }
+
+  &-help {
+    width: rem-convert(18px);
+    height: rem-convert(18px);
+    color: var(--theme-darkest);
+  }
+
+  &-blockInput {
+    position: relative;
+  }
+
+  &-input {
+    @apply paragraph-4;
+    border: 1px solid var(--theme-darkest);
+    border-radius: 8px;
+    color: var(--theme-dark);
+    width: 100%;
+    padding: rem-convert(16px) rem-convert(10px);
+    transition: 0.2s ease all;
+    text-overflow: ellipsis;
+
+    &:hover {
+      background-color: var(--theme-lighter);
+    }
+
+    &:focus-visible {
+      outline-offset: 2px;
+      outline: 1px solid var(--theme);
+    }
+
+    &--filled {
+      border-color: var(--theme);
+    }
+
+    &--unit {
+      padding-right: rem-convert(50px);
+    }
+    &--verificationCode {
+      font-size: rem-convert(18px);
+      text-align: center;
+      height: 59px;
+    }
+  }
+
+  &-unit {
+    position: absolute;
+    right: rem-convert(10px);
+    bottom: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+    font-size: var(--font-size-paragraph-4);
+    font-family: var(--font-family-paragraph-4);
+    line-height: var(--line-height-paragraph-4);
+  }
+
+  &--small {
+    .FieldInput-input {
+      padding: rem-convert(10px);
+
+      &--unit {
+        padding-right: rem-convert(50px);
+      }
+    }
+  }
+
+  &--error {
+    .FieldInput-label {
+      color: var(--error-dark);
+    }
+
+    .FieldInput-input {
+      border: 1px solid var(--error-light);
+      color: var(--error);
+
+      &:hover {
+        background-color: var(--error-lightest);
+      }
+
+      &:focus-visible {
+        outline: 1px solid var(--error-dark);
+      }
+    }
+
+    ::placeholder {
+      color: var(--error);
+    }
+  }
+
+  &-error {
+    @apply paragraph-4;
+    color: var(--error-dark);
+    font-style: italic;
+  }
+
+  &--success {
+    .FieldInput-input {
+      border: 1px solid var(--success);
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" fill="none"><path d="m26.648 19.113-6.33 6.524a1.176 1.176 0 0 1-1.698 0l-3.268-3.368a1.265 1.265 0 0 1 0-1.75 1.176 1.176 0 0 1 1.698 0l2.419 2.493 5.481-5.65a1.176 1.176 0 0 1 1.698 0 1.265 1.265 0 0 1 0 1.751Z" fill="%2337E17B"></path></svg>');
+      background-repeat: no-repeat;
+      background-position: right 0 top 50%;
+    }
+  }
+
+  &[disabled] {
+    .FieldInput-label {
+      color: var(--disabled);
+    }
+
+    .FieldInput-input {
+      border: 1px solid var(--disabled);
+      color: var(--disabled);
+      cursor: not-allowed;
+      background-color: var(--disabled-light);
+    }
+
+    .FieldInput-help {
+      color: var(--disabled);
+    }
+
+    ::placeholder {
+      color: var(--disabled);
+    }
+  }
+
+  &--withButton {
+    .FieldInput-input {
+      padding-right: 25%;
+    }
+  }
+
+  &-button {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    bottom: 1px;
+    display: flex;
+    align-items: stretch;
+  }
+
+  &-buttonIcon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    width: rem-convert(20px);
+    height: rem-convert(20px);
+  }
+
+  ::placeholder {
+    color: var(--disabled);
+    font-style: italic;
+  }
+
+  &-blockInputIconLeft {
+    .FieldInput-buttonIcon {
+      right: 0;
+      left: 10px;
+    }
+    .FieldInput-input {
+      padding-left: rem-convert(40px);
+    }
+  }
+
+  &-blockInputIconRight {
+    .FieldInput-buttonIcon {
+      right: 10px;
+    }
+    .FieldInput-input {
+      padding-right: rem-convert(40px);
+    }
+  }
+}

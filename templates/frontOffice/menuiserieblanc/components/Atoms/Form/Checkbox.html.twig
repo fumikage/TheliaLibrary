@@ -1,0 +1,15 @@
+{% set classes = classes|default('') %}
+{% set error = error|default('') %}
+{% set name = name|default('') %}
+{% set value = value|default('') %}
+{% set disabled = disabled|default(false) %}
+{% set checked = checked|default(false) %}
+{% set label = label|default('') %}
+
+<label class="Checkbox {{ classes }} {{ error ? 'error'  : ''}}">
+	<input type="checkbox" name='{{ name }}' value='{{ value }}' {% if disabled %} disabled {% endif %} {% if checked %} checked {% endif %}>
+	<div class="checkmark">
+    {{ ux_icon('checkbox') }}
+	</div>
+  <span class="paragraph-5">{{ label|raw }}</span>
+</label>

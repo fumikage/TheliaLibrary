@@ -1,0 +1,149 @@
+.HighlightProduct {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--white);
+  @apply rounded-lg;
+
+  &-header {
+    margin-bottom: 0.5rem;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+    z-index: 9;
+  }
+
+  @screen md {
+    &:nth-child(2n) {
+      .HighlightProduct-mainContent {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+  @screen lg {
+    &:nth-child(2n) {
+      .HighlightProduct-mainContent {
+        flex-direction: row;
+      }
+    }
+  }
+
+  &-mainContent {
+    width: 100%;
+    @screen lg {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+    }
+  }
+
+  &-img {
+    overflow: hidden;
+    margin-bottom: rem-convert(32px);
+    @screen md {
+      height: 567px;
+      margin-bottom: rem-convert(48px);
+    }
+    @screen lg {
+      height: 455px;
+      margin-bottom: rem-convert(0px);
+    }
+    @screen xl {
+      height: 558px;
+    }
+    @screen 2xl {
+      height: 687px;
+    }
+    @screen 3xl {
+      height: 800px;
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: all cubic-bezier(0, 0, 0, 0.7) 0.3s;
+    }
+  }
+
+  &-desc {
+    color: var(--theme-dark);
+    @screen lg {
+      padding: 0 rem-convert(48px);
+    }
+    @screen xl {
+      padding: 0 rem-convert(60px);
+    }
+    @screen 2xl {
+      padding-right: rem-convert(210px);
+    }
+    @screen 3xl {
+      padding-right: rem-convert(292px);
+    }
+  }
+
+  &-title {
+    @apply h1;
+    margin-bottom: rem-convert(16px);
+    color: var(--theme-dark);
+    text-decoration: none;
+    transition: inherit;
+    display: block;
+  }
+
+  &:hover,
+  &:focus-visible {
+    .HighlightProduct-img {
+      img {
+        transform: scale(1.075);
+      }
+    }
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: none;
+
+    .HighlightProduct-img {
+      outline: 2px solid theme('colors.gray.400');
+    }
+  }
+
+  &-footer {
+    margin-top: rem-convert(24px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    @screen md {
+      margin-top: rem-convert(16px);
+      max-width: rem-convert(263px);
+    }
+  }
+}
+
+.HighlightProduct--right {
+  .HighlightProduct-imgLink  {
+    grid-column: 2;
+  }
+  .HighlightProduct-desc {
+    grid-column: 1;
+    grid-row: 1;
+    @screen 2xl {
+      padding-left: rem-convert(145px);
+      padding-right: rem-convert(112px);
+    }
+    @screen 3xl {
+      padding-left: rem-convert(292px);
+    }
+  }
+}

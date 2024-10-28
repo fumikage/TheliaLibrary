@@ -1,0 +1,22 @@
+{% set img = img|default({url: '/images/placeholder.webp', alt:''}) %}
+{% set classes = classes|default('') %}
+{% set title = title|default('') %}
+{% set date = date|default('') %}
+{% set url = url|default('') %}
+
+<div class="SimilarContentCard {{ classes }}">
+  <div class="SimilarContentCard-imgLink" href="#">
+    <figure class="SimilarContentCard-img">
+      <img src="{{ img.url }}" alt="{{ img.alt }}"
+           title="{{ img.alt }}"  loading="lazy">
+    </figure>
+  </div>
+  <div class="SimilarContentCard-desc">
+
+    <a href="{{ url }}" class="SimilarContentCard-title">{{ title }}</a>
+
+    <div class="SimilarContentCard-footer">
+      {{ date|date("d/m/Y") }}
+    </div>
+  </div>
+</div>

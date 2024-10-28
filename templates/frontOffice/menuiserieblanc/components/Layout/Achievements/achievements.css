@@ -1,0 +1,44 @@
+.Achievements {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  @screen md {
+    flex-direction: row;
+    overflow: hidden;
+    gap: 1.5rem;
+
+    .Achievement {
+      width: 271px;
+      flex-shrink: 0;
+
+      &:last-child {
+        margin-right: 3rem;
+      }
+    }
+  }
+
+  @screen lg {
+    cursor: initial;
+    justify-content: stretch;
+    align-items: stretch;
+    .Achievement {
+      width: 100%;
+      flex-shrink: 1;
+    }
+  }
+}
+
+.Achievements-button {
+  width: 272px;
+
+  @screen md {
+    width: 342px;
+  }
+  @screen lg {
+    width: 212px;
+  }
+}

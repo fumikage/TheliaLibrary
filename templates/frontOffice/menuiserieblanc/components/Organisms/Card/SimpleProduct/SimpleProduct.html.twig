@@ -1,0 +1,25 @@
+{% set title = title|default('') %}
+{% set img = img|default({url: '/images/placeholder.png', alt:''}) %}
+{% set classes = classes|default('') %}
+{% set button = button|default({label: '', href:''}) %}
+{% set url = url|default('#') %}
+{% if withoutText %}{% set classes = classes ~ ' SimpleProduct--withoutText' %}{% endif %}
+
+<div class="SimpleProduct simple {{ classes }}">
+  <div class="SimpleProduct-mainContent">
+    <a class="SimpleProduct-imgLink" href="{{ url }}">
+      <figure class="SimpleProduct-img">
+        <img src="{{ img.url }}" alt="{{ img.alt }}" title="{{ img.alt }}"  loading="lazy">
+      </figure>
+    </a>
+    <div class="SimpleProduct-desc">
+
+      <a href="#" class="SimpleProduct-title">{{ title }}</a>
+
+      <div class="SimpleProduct-footer">
+        {% include '@components/Molecules/Link/Link.html.twig' with {customText: withoutText ?  '' : button.label | trans, href: button.href,iconRight:'arrow-right', size:"medium"} %}
+
+      </div>
+    </div>
+  </div>
+</div>

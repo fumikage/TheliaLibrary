@@ -1,0 +1,66 @@
+.Tab {
+  @apply typo-button-large;
+  text-align: center;
+  border-bottom: var(--disabled) solid 1px;
+  color: var(--disabled);
+  padding: rem-convert(12px) rem-convert(24px);
+  display: inline-flex;
+  align-items: center;
+  gap: rem-convert(6px);
+  transition: 0.2s ease all;
+
+  &:hover:not(:focus):not([disabled]) {
+    border-bottom: var(--theme-dark) solid 1px;
+    color: var(--theme-dark);
+  }
+
+  &:hover:focus-visible {
+    color: var(---theme-darkest);
+  }
+
+  &:active:not([disabled]) {
+    border-bottom: var(--theme-dark) solid 1px;
+    color: var(--theme-dark);
+  }
+
+  &:active:hover {
+    border-bottom: var(--theme-darkest) solid 1px;
+    color: var(--theme-darkest);
+  }
+
+  &:active:hover:not(:focus) {
+    background: var(--theme-darkest);
+    outline-color: var(--theme-darkest);
+  }
+
+  &:focus-visible {
+    border: var(--theme-darkest) solid 2px;
+  }
+
+  &[disabled] {
+    border-bottom: var(--disabled-light);
+    color: var(--disabled-light);
+    cursor: not-allowed;
+  }
+
+  &[disabled]:active {
+    background-color: var(--grey-lighter);
+    color: var(--white);
+  }
+
+  &--small {
+    @apply typo-button-small;
+    padding: rem-convert(10px) rem-convert(12px);
+
+    .Tab-icon {
+      width: rem-convert(18px);
+      height: rem-convert(18px);
+    }
+  }
+
+  &-icon {
+    width: rem-convert(24px);
+    height: rem-convert(24px);
+    display: flex;
+  }
+}

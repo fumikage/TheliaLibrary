@@ -1,0 +1,46 @@
+/vendor
+/web/assets
+/web/cache
+/web/dist
+/web/tinymce
+/var
+.docker/mysql-data/*
+.idea
+!.docker/mysql-data/.gitkeep
+.env
+
+# Thelia default templates
+/templates/frontOffice/default
+/templates/frontOffice/modern
+!/templates/frontOffice/menuiserieblanc
+/templates/backOffice/default
+/templates/email/default
+/templates/pdf/default
+
+# Thelia config
+/local/config
+/local/setup
+/local/media
+/local/session
+!local/media/images/store/favicon.png
+!local/media/images/store/thelia.svg
+!local/media/images/store/banner.png
+
+# Thelia modules
+/local/modules/*
+
+### Please add your dependancies here
+
+###> symfony/framework-bundle ###
+/.env.local
+/.env.local.php
+/.env.*.local
+/config/secrets/prod/prod.decrypt.private.php
+/public/bundles/
+/var/
+/vendor/
+###< symfony/framework-bundle ###
+
+###> lexik/jwt-authentication-bundle ###
+/config/jwt/*.pem
+###< lexik/jwt-authentication-bundle ###

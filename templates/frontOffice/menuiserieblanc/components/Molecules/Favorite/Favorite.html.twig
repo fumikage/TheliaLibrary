@@ -1,0 +1,9 @@
+{% set text = text|default('') %}
+{% set selected = selected|default(false) %}
+
+<button class='Favorite {% if selected %}selected{% endif %}'>
+  <span class='text'>{{ text }}</span>
+  <span class='star'>
+    {{ ux_icon('star') }}
+  </span>
+</button>

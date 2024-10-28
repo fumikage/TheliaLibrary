@@ -1,0 +1,15 @@
+.Highlights {
+  display: flex;
+  flex-direction: column;
+  gap: rem-convert(80px);
+
+  @screen maxSm {
+    gap: rem-convert(120px);
+  }
+  @screen md {
+    gap: rem-convert(80px);
+  }
+  @screen lg {
+    gap: rem-convert(48px);
+  }
+}

@@ -1,0 +1,90 @@
+.HeaderButton {
+  background: var(--header-button-bg);
+  color: var(--header-button-color);
+
+  @apply typo-button-large flex flex-col lg:flex-row items-center justify-center h-full gap-1 md:px-5 md:flex-initial flex-1;
+
+  &:hover {
+    --header-button-bg: var(--header-button-bg-hover);
+    color: var(--white);
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 1px var(--theme) inset;
+  }
+
+  &-icon {
+    width: rem-convert(24px);
+    height: rem-convert(24px);
+    padding-top: rem-convert(4px);
+    padding-bottom: rem-convert(4px);
+  }
+
+  &-text {
+    @apply paragraph-4 font-normal;
+    font-family: var(--font-family-paragraph-1);
+  }
+  &--small {
+    .HeaderButton-text {
+      @apply md:sr-only lg:not-sr-only;
+    }
+  }
+  &-subText {
+    @apply paragraph-4 font-light;
+  }
+
+  &--theme {
+    --header-button-bg: var(--white);
+    --header-button-color: var(--theme-dark);
+    --header-button-bg-hover: var(--theme-darkest);
+    @screen md {
+      --header-button-bg: var(--theme-dark);
+      --header-button-color: var(--white);
+      --header-button-bg-hover: var(--theme-darkest);
+    }
+  }
+
+  &--dark {
+    --header-button-bg: var(--theme-dark);
+    --header-button-color: var(--white);
+
+    &:hover {
+      --header-button-bg: var(--theme-darkest);
+    }
+  }
+
+  &--light {
+    --header-button-bg: var(--white);
+    --header-button-color: var(--theme-dark);
+
+    &:hover {
+      --header-button-color: var(--theme-white);
+      --header-button-bg: var(--theme-dark);
+    }
+  }
+
+  &--cart {
+    @apply bg-black md:bg-inherit text-white md:text-black lg:text-white lg:bg-black hover:bg-black hover:text-white;
+  }
+}
+
+.DropdownProfile {
+  opacity: 0;
+  visibility: hidden;
+  transition: 300ms;
+  position: absolute;
+  transform: translateY(-10px);
+  margin-top: 16px;
+  right: 18px;
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: 0px 3px 5px 0px rgba(84, 84, 84, 0.12);
+
+  &.active {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    width: max-content;
+  }
+}

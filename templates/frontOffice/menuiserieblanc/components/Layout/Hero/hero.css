@@ -1,0 +1,43 @@
+.Hero {
+  color: var(--theme-darkest);
+  display: flex;
+  flex-direction: column;
+
+  @screen md {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-imageContainer {
+    height: 348px;
+    width: 100%;
+    @screen xs {
+      height: 100%;
+    }
+    @screen md {
+      width: 50%;
+    }
+  }
+  &-image {
+    width: 100%;
+    height: 100%;
+  }
+
+  &-title {
+    height: 348px;
+    padding: 0px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @screen md {
+      height: 100%;
+      width: 50%;
+      padding: 0px rem-convert(48px);
+    }
+    @screen lg {
+      padding: 0px rem-convert(72px);
+    }
+  }
+}

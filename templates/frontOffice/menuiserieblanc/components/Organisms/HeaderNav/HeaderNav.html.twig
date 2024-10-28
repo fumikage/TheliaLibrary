@@ -1,0 +1,6 @@
+<div class='HeaderNav'>
+	{% include '@components/Molecules/HeaderButton/HeaderButton.html.twig' with { icon: 'phone', classes: 'HeaderNav-btn HeaderButton--theme HeaderButton--light !hidden md:!flex', text: '04 77 58 20 02'|trans, small: true } %}
+	{% include '@components/Molecules/HeaderButton/HeaderButton.html.twig' with { icon: 'phone', classes: 'flex md:hidden HeaderNav-btn HeaderButton--theme HeaderButton--light', text: 'Call us'|trans, small: true } %}
+	{% include '@components/Molecules/HeaderButton/HeaderButton.html.twig' with { icon: 'email2', classes: 'HeaderNav-btn HeaderButton--theme HeaderButton--theme', text: 'Request a quote'|trans, small: true } %}
+	{% include '@components/Molecules/HeaderButton/HeaderButton.html.twig' with { icon: 'menu', id: "toggleMenu", classes: 'HeaderNav-btn  HeaderButton--theme lg:hidden', text: 'Menu'|trans, small: true } %}
+</div></header>

@@ -1,0 +1,117 @@
+.CategoryCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--white);
+  @apply rounded-lg;
+
+  &-header {
+    margin-bottom: 0.5rem;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+    z-index: 9;
+  }
+
+  @screen md {
+    &:nth-child(2n) {
+      .CategoryCard-mainContent {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+  @screen lg {
+    &:nth-child(2n) {
+      .CategoryCard-mainContent {
+        flex-direction: row;
+      }
+    }
+  }
+
+  &-mainContent {
+    width: 100%;
+  }
+
+  &-img {
+    overflow: hidden;
+    height: 242px;
+    @screen md {
+      height: 302px;
+    }
+    @screen lg {
+      height: 223px;
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: all cubic-bezier(0, 0, 0, 0.7) 0.3s;
+    }
+  }
+
+  &-desc {
+    color: var(--theme-dark);
+    padding: 16px 0;
+    @screen sm {
+      padding: 24px 0;
+    }
+    @screen md {
+      flex-grow: 1;
+      justify-content: center;
+      flex-direction: column;
+      display: flex;
+    }
+
+    @screen lg {
+      padding: 44px 0;
+    }
+  }
+
+  &-title {
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    color: var(--theme-dark);
+    text-decoration: none;
+    transition: inherit;
+    display: block;
+    padding-bottom: 12px;
+    @screen lg {
+      font-size: var(--font-size-lg);
+    }
+  }
+
+  &:hover,
+  &:focus-visible {
+    .CategoryCard-img {
+      img {
+        transform: scale(1.075);
+      }
+    }
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: none;
+
+    .CategoryCard-img {
+      outline: 2px solid theme('colors.gray.400');
+    }
+  }
+
+  &-footer {
+    margin-top: rem-convert(13px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}

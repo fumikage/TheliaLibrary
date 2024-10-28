@@ -1,0 +1,77 @@
+.FieldNumber {
+  display: flex;
+  flex-direction: column;
+  gap: rem-convert(4px);
+
+  &-input {
+    @apply paragraph-4;
+    border: 1px solid var(--theme-darkest);
+    border-radius: 8px;
+    color: var(--theme-dark);
+    padding: rem-convert(16px) rem-convert(10px);
+    transition: 0.2s ease all;
+    width: rem-convert(48px);
+    text-align: center;
+
+    &:hover {
+      background-color: var(--theme-lighter);
+    }
+
+    &:focus-visible {
+      outline-offset: 2px;
+      outline: 1px solid var(--theme);
+    }
+
+    &--filled {
+      border-color: var(--theme);
+    }
+  }
+
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    appearance: none;
+  }
+
+  &--error {
+    .FieldNumber-input {
+      border: 1px solid var(--error-light);
+      color: var(--error);
+
+      &:hover {
+        background-color: var(--error-lightest);
+      }
+
+      &:focus-visible {
+        outline: 1px solid var(--error-dark);
+      }
+    }
+
+    ::placeholder {
+      color: var(--error);
+    }
+  }
+
+  &-error {
+    @apply paragraph-4;
+    color: var(--error-dark);
+    font-style: italic;
+  }
+
+  &[disabled] {
+    .FieldNumber-input {
+      border: 1px solid var(--disabled);
+      color: var(--disabled);
+      cursor: not-allowed;
+      background-color: var(--disabled-light);
+    }
+
+    ::placeholder {
+      color: var(--disabled);
+    }
+  }
+
+  ::placeholder {
+    color: var(--disabled);
+    font-style: italic;
+  }
+}

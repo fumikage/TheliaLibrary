@@ -1,0 +1,35 @@
+{
+  "Fields": [
+    "chevron-small-down",
+    "chevron-small-up",
+    "search",
+    "calendar",
+    "validated",
+    "plus",
+    "minus",
+    "filter",
+    "hide",
+    "show",
+    "card"
+  ],
+  "All": [
+    "chevron-left",
+    "chevron-right",
+    "chevron-down",
+    "chevron-up",
+    "arrow-left",
+    "arrow-right",
+    "close",
+    "close-big",
+    "hide",
+    "show",
+    "delete",
+
+    "help",
+    "edit",
+    "menu",
+    "zoom"
+  ],
+  "Other": ["estimate", "email2", "phone", "mesuring"],
+  "Social Media": ["facebook", "linkedin", "instagram"]
+}

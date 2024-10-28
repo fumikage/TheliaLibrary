@@ -1,0 +1,13 @@
+{
+  "theme": [
+    "bg-theme-darkest",
+    "bg-theme-dark",
+    "bg-theme",
+    "bg-theme-light",
+    "bg-theme-lighter"
+  ],
+  "black-white": ["bg-black", "bg-white"],
+  "disabled": ["bg-disabled-light", "bg-disabled"],
+  "error": ["bg-error-dark", "bg-error", "bg-error-light", "bg-error-lightest"],
+  "success": ["bg-success-dark", "bg-success"]
+}

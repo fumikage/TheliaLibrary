@@ -1,0 +1,290 @@
+.Button {
+  display: inline-flex;
+  padding: rem-convert(12px) rem-convert(24px);
+  align-items: center;
+  justify-content: center;
+  background: var(--theme-dark);
+  color: var(--white);
+  text-align: center;
+
+  font-size: var(--font-size-button-medium);
+  font-weight: var(--font-weight-button-medium);
+
+  text-decoration: none;
+
+  & > span.icon {
+    @apply w-4 h-4;
+    &-left {
+      padding-right: rem-convert(6px);
+    }
+    &-right {
+      padding-left: rem-convert(6px);
+    }
+  }
+
+  &--large {
+    padding: rem-convert(24px) rem-convert(24px);
+    font-size: var(--font-size-button-large);
+
+    font-weight: var(--font-weight-button-medium);
+    & > span {
+      @apply w-6 h-6;
+    }
+  }
+  &--small {
+    padding: rem-convert(12px) rem-convert(12px);
+    font-size: var(--font-size-button-small);
+    font-weight: var(--font-weight-button-small);
+    & > span {
+      @apply w-3 h-3;
+    }
+  }
+
+  &:after {
+    transform: scaleX(-1);
+  }
+
+  &:not(.Button--minimal):not(.Button--secondary):not(.Button--error):not(
+      .Button-quantity
+    ) {
+    &:hover:not(:focus):not(:disabled) {
+      background: var(--theme-darkest);
+    }
+  }
+  &:focus-visible,
+  &:has(:focus-visible) {
+    outline: var(--theme-darkest) solid 2px;
+  }
+  &:disabled {
+    background: var(--disabled-light);
+  }
+
+  &--secondary {
+    background: var(--white);
+    color: var(--theme-dark);
+    border: var(--theme-dark) solid 1px;
+    span {
+      color: var(--theme-darl);
+    }
+    &:hover:not(:focus):not(:disabled) {
+      background: var(--white);
+      color: var(--theme-darkest);
+      border: var(--theme-darkest) solid 1px;
+      span {
+        color: var(--theme-darkest);
+      }
+    }
+    &:focus-visible,
+    &:has(:focus-visible) {
+      background: var(--white);
+      border: transparent solid 1px;
+      &:hover {
+        color: var(--theme-dark);
+        span {
+          color: var(--theme-dark);
+        }
+      }
+    }
+    &:disabled {
+      background: var(--white);
+      color: var(--disabled-light);
+      border: var(--disabled-light) solid 1px;
+      span {
+        color: var(--disabled-light);
+      }
+    }
+  }
+
+  &--minimal {
+    background: none;
+    color: var(--theme-dark);
+    span {
+      color: var(--theme-dark);
+    }
+    &:hover:not(:disabled) {
+      color: var(--theme-darkest);
+      span {
+        color: var(--theme-darkest);
+      }
+    }
+    &:focus,
+    &:focus:hover {
+      background: var(--theme-lightest);
+      outline: none;
+    }
+    &:disabled {
+      background: var(--white);
+      color: var(--disabled-light);
+      span {
+        color: var(--disabled-light);
+      }
+    }
+  }
+
+  &--error {
+    background: var(--error);
+    &:hover:not(:focus):not(:disabled) {
+      background: var(--error-light);
+    }
+    &:focus-visible,
+    &:has(:focus-visible) {
+      outline: var(--error-dark) solid 2px;
+    }
+    &:disabled {
+      background: var(--error-lightest);
+    }
+  }
+
+  @layer utilities {
+    &--fill {
+      width: 100%;
+
+      &:before {
+        display: none;
+      }
+    }
+    &--unfill {
+      width: initial;
+    }
+  }
+  &--sharp {
+    border-radius: 0;
+  }
+}
+
+.Button-quantity {
+  input {
+    -moz-appearance: textfield;
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    &:focus,
+    &:focus-visible {
+      --tw-ring-color: transparent;
+      outline: 0;
+    }
+    background: var(--theme-dark);
+    padding: 0;
+    border: none;
+    text-align: center;
+    width: rem-convert(60px);
+  }
+  &:hover:not(:focus):not(.disabled) {
+    background: var(--theme-darkest);
+  }
+  &:hover input {
+    background: var(--theme-darkest);
+  }
+  button {
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+  &.disabled,
+  &.disabled:hover {
+    cursor: default;
+    background: var(--disabled-light);
+    input {
+      background: var(--disabled-light);
+    }
+  }
+
+  &.Button--large {
+    input {
+      width: rem-convert(80px);
+    }
+  }
+  &.Button--small {
+    input {
+      width: rem-convert(50px);
+    }
+    &.Button--xsmall {
+      input {
+        width: rem-convert(40px);
+      }
+    }
+  }
+
+  &.Button--secondary {
+    input {
+      background: var(--white);
+      color: var(--theme-dark);
+    }
+    &:hover:not(:focus):not(.disabled) {
+      border-color: var(--theme-darkest);
+      background: var(--white);
+      color: var(--theme-darkest);
+      input {
+        background: var(--white);
+        color: var(--theme-darkest);
+      }
+    }
+
+    &.disabled,
+    &.disabled:hover {
+      background: var(--white);
+      color: var(--disabled-light);
+      border: var(--disabled-light) solid 1px;
+      input {
+        background: var(--white);
+        color: var(--disabled-light);
+      }
+    }
+  }
+}
+
+.Button--round {
+  width: rem-convert(48px);
+  height: rem-convert(48px);
+  border-radius: 9999px;
+  padding: 0;
+  gap: 0;
+
+  &.Button--small {
+    width: rem-convert(40px);
+    height: rem-convert(40px);
+
+    & > span {
+      @apply w-4 h-4;
+    }
+  }
+
+  & > span.icon {
+    @apply w-4 h-4;
+    &-left {
+      padding-right: 0;
+    }
+    &-right {
+      padding-left: 0;
+    }
+  }
+}
+
+.Button-quantityButton {
+  display: flex;
+
+  button.Button {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    position: relative;
+    border-left: 1px solid var(--white);
+    &:after {
+      content: '';
+      position: absolute;
+    }
+  }
+  .Button-quantity {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  &:hover {
+    .Button {
+      background: var(--theme-darkest);
+      input {
+        background: var(--theme-darkest);
+      }
+    }
+  }
+}

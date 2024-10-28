@@ -1,0 +1,28 @@
+{% set title = title|default('') %}
+{% set description = description|default('') %}
+{% set img = img|default({url: '/images/placeholder.png', alt:''}) %}
+{% set classes = classes|default('') %}
+{% set button = button|default({label: '', href:''}) %}
+{% set url = url|default('#') %}
+{% set imagePosition = imagePosition|default('left') %}
+
+
+<div class="HighlightProduct HighlightProduct--{{imagePosition}} {{ classes }}">
+
+  <div class="HighlightProduct-mainContent">
+    <a class="HighlightProduct-imgLink" href="{{ url }}">
+      <figure class="HighlightProduct-img">
+        <img src="{{ img.url }}" alt="{{ img.alt }}" title="{{ img.alt }}"  loading="lazy">
+      </figure>
+    </a>
+    <div class="HighlightProduct-desc">
+
+      <a href="#" class="HighlightProduct-title">{{ title }}</a>
+      <p class="paragraph-2">{{ description }}</p>
+      <div class="HighlightProduct-footer">
+          {% include '@components/Molecules/Button/Button.html.twig' with {text: button.label, href: button.href, variant: "secondary", fill:true } %}
+
+      </div>
+    </div>
+  </div>
+</div>

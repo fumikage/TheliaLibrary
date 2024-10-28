@@ -1,0 +1,54 @@
+.FilterPill {
+  @apply paragraph-3;
+  padding: rem-convert(8px) rem-convert(10px);
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  color: var(--theme-dark);
+  border: 1.5px solid var(--theme-dark);
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--theme-lighter);
+  }
+  &--withIcon {
+    padding: rem-convert(8px) rem-convert(10px) rem-convert(8px)
+      rem-convert(4px);
+  }
+
+  &-iconClose {
+    width: rem-convert(18px);
+    height: rem-convert(18px);
+    display: none;
+    margin-left: rem-convert(4px);
+  }
+
+  &:has(:checked) {
+    background-color: var(--theme-lighter);
+    border: 1.5px solid var(--theme-darkest);
+    .FilterPill-iconClose {
+      display: inline-block;
+    }
+    &:hover {
+      background-color: var(--white);
+    }
+  }
+
+  &-icon {
+    width: rem-convert(18px);
+    height: rem-convert(18px);
+    display: inline-block;
+    margin-right: rem-convert(4px);
+  }
+
+  &:has(:disabled) {
+    border-color: var(--disabled-light);
+    color: var(--disabled-light);
+    cursor: not-allowed;
+    background-color: var(--white);
+
+    .FilterPill-icon {
+      opacity: 0.2;
+    }
+  }
+}

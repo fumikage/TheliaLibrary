@@ -1,0 +1,23 @@
+.ItemHeader {
+  @screen lg {
+    @apply paragraph-1 no-underline outline-none text-black flex items-center justify-center relative;
+    color: var(--theme-dark);
+    padding: 18px 0px;
+    &:after {
+      @apply h-[2px] w-full bg-theme-dark bottom-0 left-0 absolute;
+    }
+    &:hover {
+      color: var(--theme-darkest);
+    }
+    &:hover,
+    &:focus,
+    &:active {
+      &:after {
+        content: '';
+      }
+    }
+  }
+  @screen xl {
+    padding: 23px 0px;
+  }
+}

@@ -1,0 +1,37 @@
+.Link {
+  @apply link-large;
+  color: var(--theme-darkest);
+  display: inline-flex;
+  align-items: center;
+  padding: rem-convert(3px);
+  transition: 0.2s ease all;
+  outline: 0;
+  gap: 8px;
+
+  &:hover {
+    color: var(--theme-dark);
+  }
+
+  &:focus-visible {
+    background-color: var(--theme-lighter);
+  }
+
+  &:active {
+    color: var(--theme);
+  }
+
+  &[disabled] {
+    color: var(--disabled);
+    cursor: not-allowed;
+  }
+
+  &--medium {
+    @apply link;
+  }
+
+  &-icon {
+    width: rem-convert(18px);
+    height: rem-convert(18px);
+    display: flex;
+  }
+}

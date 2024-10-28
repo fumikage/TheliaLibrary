@@ -1,0 +1,122 @@
+.FieldSelect {
+  display: flex;
+  flex-direction: column;
+  gap: rem-convert(4px);
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-label {
+    @apply paragraph-4;
+    color: var(--theme-darkest);
+  }
+
+  &-help {
+    width: rem-convert(18px);
+    height: rem-convert(18px);
+    color: var(--theme-darkest);
+  }
+
+  &-select {
+    @apply paragraph-4;
+    border: 1px solid var(--theme-dark);
+    border-radius: 8px;
+    color: var(--theme-darkest) !important;
+    font-style: italic;
+    width: 100%;
+    padding: rem-convert(16px) rem-convert(10px);
+    appearance: none;
+    background: url('/assets/icons/chevron-small-down-green.svg');
+    background-repeat: no-repeat;
+    background-position: right 0 top 50%;
+    background-size: rem-convert(40px) auto;
+    transition: 0.2s ease all;
+
+    &:hover {
+      background-color: var(--theme-lighter);
+    }
+
+    &:focus-visible {
+      outline-offset: 2px;
+      outline: 1px solid var(--theme);
+    }
+
+    &--filled {
+      border-color: var(--theme);
+      color: var(--theme-darkest);
+      font-style: normal;
+    }
+  }
+
+  &-select select {
+    color: var(--error);
+  }
+
+  &-placeholder {
+    color: var(--disabled);
+    font-style: italic;
+  }
+
+  &--small {
+    .FieldSelect-select {
+      padding: rem-convert(10px);
+    }
+  }
+
+  &--error {
+    .FieldSelect-label {
+      color: var(--error-dark);
+    }
+
+    .FieldSelect-select {
+      border: 1px solid var(--error-light);
+      color: var(--error);
+      background: url('/assets/icons/chevron-small-down-red.svg');
+      background-repeat: no-repeat;
+      background-position: right 0 top 50%;
+      background-size: rem-convert(40px) auto;
+
+      &:hover {
+        background-color: var(--error-lightest);
+      }
+
+      &:focus-visible {
+        outline: 1px solid var(--error-dark);
+      }
+    }
+  }
+
+  &-error {
+    @apply paragraph-4;
+    color: var(--error-dark);
+    font-style: italic;
+  }
+
+  &--success {
+    .FieldSelect-select {
+      border: 1px solid var(--success);
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" fill="none"><path d="m26.648 19.113-6.33 6.524a1.176 1.176 0 0 1-1.698 0l-3.268-3.368a1.265 1.265 0 0 1 0-1.75 1.176 1.176 0 0 1 1.698 0l2.419 2.493 5.481-5.65a1.176 1.176 0 0 1 1.698 0 1.265 1.265 0 0 1 0 1.751Z" fill="%2337E17B"></path></svg>');
+      background-repeat: no-repeat;
+      background-position: right 0 top 50%;
+    }
+  }
+
+  &[disabled] {
+    .FieldSelect-label {
+      color: var(--disabled);
+    }
+
+    .FieldSelect-select {
+      border: 1px solid var(--disabled);
+      color: var(--disabled);
+      cursor: not-allowed;
+      background-color: var(--disabled-light);
+    }
+
+    .FieldSelect-help {
+      color: var(--disabled);
+    }
+  }
+}
