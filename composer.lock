@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "489e61378fe433490d74479df2bad2c9",
+    "content-hash": "9c2e05e154f550c12c3b918dfedbc1f8",
     "packages": [
         {
             "name": "api-platform/core",
@@ -9422,11 +9422,11 @@
         },
         {
             "name": "thelia/flexy",
-            "version": "dev-flexy",
+            "version": "dev-develop",
             "dist": {
                 "type": "path",
-                "url": "templates/frontOffice/flexy",
-                "reference": "380438d9839bd0caaa7215c30c75ae2ea7299c3a"
+                "url": "templates/frontOffice/menuiserieblanc",
+                "reference": "1084e5ab6a895d3d02566c807d1cd2cab910c7ff"
             },
             "require": {
                 "composer/installers": "~1.0",
@@ -9957,7 +9957,7 @@
             "dist": {
                 "type": "path",
                 "url": "local/installer",
-                "reference": "ddfc6bfa1172d0cd6efbd9f0643510f7f1f80638"
+                "reference": "3f71abd32d31430f6f7ad0f416c579646d6c0f06"
             },
             "require": {
                 "composer-plugin-api": "^1.0||^2.0"
