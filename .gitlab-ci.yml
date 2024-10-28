@@ -1,0 +1,35 @@
+image: node:lts-gallium
+
+cache:
+  key: one-key-to-rule-them-all
+  paths:
+    - vendor/
+
+stages:
+  - deploy
+
+deploy_dev:
+  stage: deploy
+  environment:
+    name: DEV
+    url: "$DEV_URL"
+  only:
+    - develop
+  before_script:
+    - which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )
+    - which rsync || ( apt-get update -y && apt-get install rsync -y )
+    - mkdir -p ~/.ssh
+    - eval $(ssh-agent -s)
+    - cat <<< $DEV_KNOW_HOST > ~/.ssh/known_hosts
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+    - cd templates/frontOffice/menuiserieblanc
+    - npm ci
+    - npm run build
+    - cd ../../..
+  script:
+    - ssh-add <(echo "$DEPLOY_KEY")
+    # pull develop & composer install
+    - ssh "$DEV_SSH_USERNAME"@"$DEV_SSH_HOST" -v "cd /home/sites_manuel/openstudio-lab.com/mb/public_html ; nursit-root site:chmod && rm -rf var/cache/* && git pull origin develop && php8.1 composer.phar install && rm -rf web/assets  && cp -f web/.htaccess.dev web/.htaccess" # clean old dist
+    - ssh "$DEV_SSH_USERNAME"@"$DEV_SSH_HOST" -v "cd /home/sites_manuel/openstudio-lab.com/mb/public_html ; rm -rf templates/frontOffice/menuiserieblanc/dist ; nursit-root site:chmod"
+    # transfer new dist
+    - rsync -arv ./templates/frontOffice/menuiserieblanc/dist $DEV_SSH_USERNAME@$DEV_SSH_HOST:/home/sites_manuel/openstudio-lab.com/mb/public_html/templates/frontOffice/menuiserieblanc/
