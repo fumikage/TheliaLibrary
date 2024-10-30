@@ -2,7 +2,7 @@
 {% set highlights = highlights|default([]) %}
  
 
-<div class="Highlights px-6 py-20  md:px-12 md:pr-0 lg:px-0 lg:container">
+<div class="Highlights px-6 py-20  md:px-12 md:pr-0 lg:px-0 ">
 		{% for highlight in highlights %}
 			{% include '@components/Organisms/Card/HighlightProduct/HighlightProduct.html.twig' with { img: highlight.img,
     title: highlight.title,

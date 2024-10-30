@@ -36,7 +36,7 @@
     overflow: hidden;
     width: 163px;
     @screen lg {
-      width: 340px;
+      width: auto;
       height: auto;
     }
 

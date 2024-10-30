@@ -28,7 +28,7 @@ class ProductCategory
     public function getCategories(): array
     {
         $categories = $this->dataAccessService->resources('/api/front/categories', [
-            'itemsPerPage' => 3,
+            'itemsPerPage' => 4,
         ]);
 
         return array_map(function ($item) {
