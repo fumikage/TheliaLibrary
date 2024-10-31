@@ -12,6 +12,7 @@
 
 namespace FlexyBundle\Twig\Layout;
 
+use Symfony\Contracts\Translation\TranslatorInterface;
 use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
 use Symfony\UX\TwigComponent\Attribute\ExposeInTemplate;
 use TwigEngine\Service\DataAccess\DataAccessService;
@@ -26,10 +27,11 @@ class CategoryProduct
     #[ExposeInTemplate]
     private array $products;
 
-    public function __construct(DataAccessService $dataAccessService)
+    public function __construct(DataAccessService $dataAccessService, private TranslatorInterface $translator)
     {
         $this->dataAccessService = $dataAccessService;
     }
+    
 
     public function getProducts(): array
     {
@@ -39,6 +41,14 @@ class CategoryProduct
             'page' => $this->page,
         ]);
 
-        return $this->products;
+       return array_map(function ($item) {
+            return [
+                'title' => $item['i18ns']['title'],
+                'button' => [
+                    'label' => $this->translator->trans('View product'),
+                    'href' => $item['publicUrl'],
+                ],
+            ];
+       }, $this->products);
     }
 }

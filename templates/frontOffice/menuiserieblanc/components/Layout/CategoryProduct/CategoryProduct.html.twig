@@ -1,22 +1,12 @@
 {% set products = products|default([]) %}
 
+
 <section class="px-6 lg:px-[120px] py-6 lg:flex lg:gap-[115px] lg:justify-between">
   <div class="w-[310px] lg:block hidden mt-[44px] sticky top-20">
     <div class="h4 mb-[22px]">{{ 'Filter'|trans }}</div>
 
     <div>
-      {% include '@components/Molecules/Accordion/Accordion.html.twig' with {
-        title: "Size" | trans,
-        content: ""
-      } %}
-      {% include '@components/Molecules/Accordion/Accordion.html.twig' with {
-        title: "Color" | trans,
-        content: "test"
-      } %}
-      {% include '@components/Molecules/Accordion/Accordion.html.twig' with {
-        title: "Material" | trans,
-        content: "test"
-      } %}
+      {{ component('Flexy:Layout:FiltersProduct') }}
     </div>
   </div>
 
@@ -50,7 +40,7 @@
 
     <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8 mb-[40px]">
       {% for product in products %}
-        {% include '@components/Organisms/ProductCard/ProductCard.html.twig' with  product|merge({displayWishButton: true}) %}
+        {% include '@components/Organisms/Card/SimpleProduct/SimpleProduct.html.twig' with  product|merge({img: {url: asset("dist/images/placeholder.png"), alt: product.title}}) %}
       {% endfor %}
     </div>
 
