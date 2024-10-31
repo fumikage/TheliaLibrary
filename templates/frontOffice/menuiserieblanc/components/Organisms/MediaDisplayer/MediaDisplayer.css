@@ -1,0 +1,40 @@
+.MediaDisplayer {
+  padding: rem-convert(80px) rem-convert(24px);
+  @screen md {
+    padding: rem-convert(73px) rem-convert(120px);
+  }
+  @screen lg {
+    padding: rem-convert(168px) rem-convert(106px);
+  }
+  @screen xl {
+    padding: rem-convert(168px) rem-convert(0px);
+    margin-left: auto;
+    margin-right: auto;
+    width: rem-convert(1080px);
+  }
+  &-video {
+    width: 100%;
+    height: 220px;
+    @screen maxSm {
+      height: 174px;
+    }
+    @screen md {
+      height: 398px;
+    }
+    @screen lg {
+      height: 520px;
+    }
+    @screen xl {
+      height: 692px;
+      width: rem-convert(1080px);
+    }
+  }
+
+  .h1 {
+    color: var(--theme-darkest);
+    margin-bottom: rem-convert(24px);
+    @screen md {
+      margin-bottom: rem-convert(32px);
+    }
+  }
+}

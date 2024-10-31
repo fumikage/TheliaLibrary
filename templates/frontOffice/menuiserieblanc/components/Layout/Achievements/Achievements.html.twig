@@ -1,7 +1,7 @@
 {% set title = title|default('') %}
 {% set achievements = achievements|default([]) %}
 {% set button = button|default({label:"", href:""}) %}
-<div class=" mt-[80px] lg:my-[168px]">
+<div class=" my-[80px] lg:my-[168px]">
 	<div class='pb-[40px] text-theme-dark h2 md:text-start'>{{ title }}</div>
 	<div class='Achievements grid grid-cols-1 md:grid-cols-3'>
 		{% for achievement in achievements %}
