@@ -8,7 +8,9 @@
     {% endset %}
      {% include '@components/Molecules/Accordion/Accordion.html.twig' with {
         title: filter.title,
-        content: content
+        content: content,
+        iconMinus: 'minus',
+        iconPlus: 'plus',
       } %}
 {% endfor %}
 </div>

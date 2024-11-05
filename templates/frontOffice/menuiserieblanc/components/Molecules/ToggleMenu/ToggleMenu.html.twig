@@ -1,0 +1,16 @@
+{% set content = content|default('') %}
+{% set name = name|default('') %}
+{% set closeButton = closeButton|default(false) %}
+
+<div class="ToggleMenu" data-id="{{ name }}">
+  <div class="ToggleMenu-container">
+    {% if closeButton %}
+    <button type="button" class="close-icon" aria-label="{{ name }}" data-id="{{ name }}">
+      {{ ux_icon('close') }}
+    </button>
+    {% endif %}
+    <div class="ToggleMenu-content">
+    {{ content }}
+    </div>
+  </div>
+</div>

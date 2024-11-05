@@ -16,6 +16,7 @@ import filterSelectFunction from '@components/Molecules/Filters/FilterSelect/Fil
 import { quantityButton } from '@components/Molecules/Button/button';
 import { FieldInputFunction } from '@components/Molecules/Fields/FieldInput/FieldInput';
 import { ModalFunction } from '@components/Molecules/Modal/Modal';
+import { ToggleMenuFunction } from '@components/Molecules/ToggleMenu/ToggleMenu';
 import { slider } from '@js/slider';
 import ProductGallery from '@components/Layout/ProductGallery/ProductGallery';
 import PasswordControlsFunction from '@components/Molecules/PasswordControls/PasswordControls';
@@ -36,6 +37,7 @@ function main() {
   StepsFunction();
   FieldInputFunction();
   ModalFunction();
+  ToggleMenuFunction();
   headerButtonProfileFunction();
 }
 

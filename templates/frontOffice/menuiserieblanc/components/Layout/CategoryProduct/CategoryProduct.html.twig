@@ -10,6 +10,16 @@
     </div>
   </div>
 
+  {% set filters %}
+  <div>
+     {{ component('Flexy:Layout:FiltersProduct') }}
+  </div>
+  {% endset %}
+
+  {% include '@components/Molecules/ToggleMenu/ToggleMenu.html.twig' with {name:"mobileFilter", content:filters, closeButton: false } %}
+
+ 
+
   <div>
     <div class="lg:justify-between lg:items-center mb-[29px] hidden lg:flex">
       <span>{{ products|length }}
