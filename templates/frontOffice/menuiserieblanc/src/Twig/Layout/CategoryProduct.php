@@ -48,6 +48,10 @@ class CategoryProduct
                     'label' => $this->translator->trans('View product'),
                     'href' => $item['publicUrl'],
                 ],
+                'img' => [
+                    'url' => '/legacy-image-library/product_image_'.$item['id'].'/full/%5E*!594,594/0/default.webp',
+                    'alt' => $item['i18ns']['title'],
+                ]
             ];
        }, $this->products);
     }
