@@ -1,0 +1,16 @@
+{% set filters = this.filters|default([]) %}
+<div>
+{% for filter in filters %}
+    {% set content %}
+        {% for option in filter.content %}
+        {% include '@components/Molecules/Filters/FilterPill/FilterPill.html.twig' with option|merge({closeButton: true}) %}
+        {% endfor %}
+    {% endset %}
+     {% include '@components/Molecules/Accordion/Accordion.html.twig' with {
+        title: filter.title,
+        content: content,
+        iconMinus: 'minus',
+        iconPlus: 'plus',
+      } %}
+{% endfor %}
+</div>

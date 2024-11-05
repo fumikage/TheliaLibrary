@@ -3,6 +3,7 @@
 {% set classes = classes|default('') %}
 {% set button = button|default({label: '', href:''}) %}
 {% set url = url|default('#') %}
+{% set withoutText = withoutText|default(false) %}
 {% if withoutText %}{% set classes = classes ~ ' SimpleProduct--withoutText' %}{% endif %}
 
 <div class="SimpleProduct simple {{ classes }}">

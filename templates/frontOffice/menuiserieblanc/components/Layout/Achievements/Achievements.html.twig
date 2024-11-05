@@ -1,13 +1,12 @@
 {% set title = title|default('') %}
 {% set achievements = achievements|default([]) %}
 {% set button = button|default({label:"", href:""}) %}
-
-<div class="px-6 py-20  md:px-12 md:pr-0 lg:px-0 lg:container">
-	<div class='pb-6 text-black h2 text-center md:text-center md:text-start'>{{ title }}</div>
-	<div class='Achievements slider'>
+<div class=" my-[80px] lg:my-[168px]">
+	<div class='pb-[40px] text-theme-dark h2 md:text-start'>{{ title }}</div>
+	<div class='Achievements grid grid-cols-1 md:grid-cols-3'>
 		{% for achievement in achievements %}
-		<div class="achievement">
-    {% include '@components/Organisms/Card/SimpleProduct/SimpleProduct.html.twig' with {title: achievement.productTitle, button: { href: achievement.productLink, label: "Voir le produit" }, withoutText: true} %}</div>		{% endfor %}
+		<div class="Achievement">
+    {% include '@components/Organisms/Card/SimpleProduct/SimpleProduct.html.twig' with {title: achievement.title, button: { href: achievement.link, label: "Voir le produit" }, withoutText: true, img: achievement.img|default({url: "/images/placeholder.png", alt:"placeholder"})} %}</div>		{% endfor %}
 	</div>
 	<div class="text-center md:text-start Achievements-button">
 	{% include '@components/Molecules/Button/Button.html.twig' with {text: button.label, href: button.href,icon_right:'chevron-right', variant:'secondary', classes: "mt-5", fill: true} %}

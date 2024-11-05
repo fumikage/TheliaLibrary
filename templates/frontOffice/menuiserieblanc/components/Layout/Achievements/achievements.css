@@ -1,7 +1,5 @@
 .Achievements {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  gap: 2rem;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -25,6 +23,7 @@
     cursor: initial;
     justify-content: stretch;
     align-items: stretch;
+    gap: 2.25rem;
     .Achievement {
       width: 100%;
       flex-shrink: 1;

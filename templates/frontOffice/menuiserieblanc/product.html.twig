@@ -14,6 +14,7 @@
 {% block body %}
 
 	<div class="px-6 lg:px-[120px] py-6">
+  {{dump(productCategory.id)}}
 		<div class="lg:justify-between lg:items-center mb-[29px] lg:flex">
       {{ component('Molecules:Breadcrumb:Breadcrumb', {
         items: [
@@ -30,7 +31,11 @@
           <section id="gallery" class="relative md:pl-[92px]">
             {% include '@components/Layout/ProductGallery/ProductGallery.html.twig' with {productId:productId } %}
           </section>
-          <section id="description" class="lg:pl-[92px]">
+         
+        </div>
+        <aside class="lg:w-[400px] lg:mx-0 md:w-[540px] mx-auto">
+          <h1 class="mb-3 h3 text-theme-dark">{{ attr('product', 'title') }}</h1>
+ <section id="description" class="">
             {% set descriptionContent %}
               <p>toto 2</p>
             {% endset %}
@@ -60,10 +65,7 @@
               iconMinus: "minus",
             } %}
           </section>
-        </div>
-        <aside class="lg:w-[400px] lg:mx-0 md:w-[540px] mx-auto">
-          <h1 class="mb-3 h3">{{ attr('product', 'title') }}</h1>
-          {% set chapo = attr('product', 'chapo') %}
+          {# {% set chapo = attr('product', 'chapo') %}
           {% if chapo %}
             <div class="paragraph-3">{{ chapo }}</div>
           {% endif %}
@@ -74,9 +76,9 @@
             </div>
             {% include '@components/Molecules/OrderTag/OrderTag.html.twig' with { customText: 'In stock'|trans, variant: 'success', type: 'minimal' } %}
           </div>
-          {% set attributes = getAttributesAndValues(productId) %}
+          {% set attributes = getAttributesAndValues(productId) %} #}
 
-          {% include '@react/Layout/PseSelector/PseSelector.twig' %}
+          {# {% include '@react/Layout/PseSelector/PseSelector.twig' %} #}
 
           {#     TODO : ajouter les couleurs aux attributs (voir ex commenté)    #}
           {#          {% set colors = [ #}
@@ -91,20 +93,23 @@
           {#            {% include '@components/Organisms/Modules/Filters/FilterColor.html.twig' with {options: colors, name: 'color', label: 'Couleur',id: 'filterColor'} %} #}
           {#          </div> #}
 
-          <div class="mt-[30px]">
+          {# <div class="mt-[30px]">
             {% include '@components/Molecules/Button/QuantityButton.html.twig' with {value:1, classes:'Button--large', text:'Add to cart'|trans, icon:'cart', fill:true} %}
+          </div> #}
+          <div class="mt-[30px]">
+            {% include '@components/Molecules/Button/Button.html.twig' with {text: "Request a quote" | trans, variant:"primary", fill: true} %}
           </div>
           <div class="mt-[30px]">
             {% include '@components/Organisms/Reinsurance/Reinsurance.html.twig' with {data: [
               {
                 strongText: 'Free delivery'|trans,
                 text: ' from 50€'|trans,
-                icon: 'reinsurance-delivery'
+                icon: 'estimate'
               },
               {
                 strongText: 'Shipping'|trans,
                 text: ' within 24 hours'|trans,
-                icon: 'reinsurance-shipping'
+                icon: 'mesuring'
               }
             ]} %}
           </div>
@@ -117,6 +122,7 @@
   </div>
 
 	<div class="bg-theme-lighter">
+
 		{{ component('Flexy:CrossSelling', {categoryId: productCategory.id, title: 'Last seen products' | trans}) }}
 	</div>
 {% endblock %}

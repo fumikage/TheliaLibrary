@@ -6,15 +6,9 @@ export default {
 };
 
 const standardAchievement = {
-  productTitle: 'Nom du produit',
-  productLink: '#',
-  secondaryTitle: 'Titre secondaire',
-  price: '1000,00€',
-  promoPrice: '900,00€',
-  rate: 4,
-  isNew: true,
-  displayWishButton: true,
-  reviewCount: 12
+  title: 'Nom du produit',
+  link: '#',
+  displayWishButton: true
 };
 
 const achievements = [];

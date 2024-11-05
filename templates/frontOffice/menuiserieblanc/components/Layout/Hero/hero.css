@@ -12,16 +12,19 @@
   &-imageContainer {
     height: 348px;
     width: 100%;
+
     @screen xs {
-      height: 100%;
+      height: 424px;
     }
     @screen md {
       width: 50%;
+      height: 100%;
     }
   }
   &-image {
     width: 100%;
     height: 100%;
+    object-fit: cover;
   }
 
   &-title {
