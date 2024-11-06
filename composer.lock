@@ -9422,11 +9422,11 @@
         },
         {
             "name": "thelia/flexy",
-            "version": "dev-develop",
+            "version": "dev-flexy",
             "dist": {
                 "type": "path",
                 "url": "templates/frontOffice/menuiserieblanc",
-                "reference": "1084e5ab6a895d3d02566c807d1cd2cab910c7ff"
+                "reference": "d73fbff40c9ef40f106bacfc90fff13cc5aef6ef"
             },
             "require": {
                 "composer/installers": "~1.0",
