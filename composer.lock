@@ -2316,16 +2316,16 @@
         },
         {
             "name": "phpdocumentor/reflection-docblock",
-            "version": "5.5.0",
+            "version": "5.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
-                "reference": "54e10d44fc1a84e2598d26f70d4f6f1f233e228a"
+                "reference": "0c70d2c566e899666f367ab7b80986beb3581e6f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/54e10d44fc1a84e2598d26f70d4f6f1f233e228a",
-                "reference": "54e10d44fc1a84e2598d26f70d4f6f1f233e228a",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/0c70d2c566e899666f367ab7b80986beb3581e6f",
+                "reference": "0c70d2c566e899666f367ab7b80986beb3581e6f",
                 "shasum": ""
             },
             "require": {
@@ -2374,9 +2374,9 @@
             "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
             "support": {
                 "issues": "https://github.com/phpDocumentor/ReflectionDocBlock/issues",
-                "source": "https://github.com/phpDocumentor/ReflectionDocBlock/tree/5.5.0"
+                "source": "https://github.com/phpDocumentor/ReflectionDocBlock/tree/5.5.1"
             },
-            "time": "2024-11-04T21:26:31+00:00"
+            "time": "2024-11-06T11:58:54+00:00"
         },
         {
             "name": "phpdocumentor/type-resolver",
@@ -10646,12 +10646,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/thelia-modules/TwigEngine.git",
-                "reference": "431ace9ee1254e0c70576734b6947f5518f0bb28"
+                "reference": "010a9d64bbf5b5cd437ef7e247d7ab2f575df4dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thelia-modules/TwigEngine/zipball/431ace9ee1254e0c70576734b6947f5518f0bb28",
-                "reference": "431ace9ee1254e0c70576734b6947f5518f0bb28",
+                "url": "https://api.github.com/repos/thelia-modules/TwigEngine/zipball/010a9d64bbf5b5cd437ef7e247d7ab2f575df4dd",
+                "reference": "010a9d64bbf5b5cd437ef7e247d7ab2f575df4dd",
                 "shasum": ""
             },
             "require": {
@@ -10672,7 +10672,7 @@
                 "issues": "https://github.com/thelia-modules/TwigEngine/issues",
                 "source": "https://github.com/thelia-modules/TwigEngine/tree/twig"
             },
-            "time": "2024-11-06T08:40:31+00:00"
+            "time": "2024-11-06T16:40:18+00:00"
         },
         {
             "name": "thelia/url-sanitizer-module",
