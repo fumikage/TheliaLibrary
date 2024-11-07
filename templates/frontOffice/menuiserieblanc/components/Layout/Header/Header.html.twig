@@ -42,7 +42,7 @@
               		iconMinus: "minus",
             	} %}
 				{% include '@components/Molecules/Accordion/Accordion.html.twig' with {
-             		title: 'Stories'|trans,
+             		title: 'Story'|trans,
               		content: categoryContent,
               		iconPlus: "plus",
               		iconMinus: "minus",
@@ -62,7 +62,7 @@
 			</ul>
 			<div class="Header-navigation hidden md:flex" >
 					{% include '@components/Molecules/ItemHeader/ItemHeader.html.twig' with { customText: "Products"|trans, href: "", subs: categories|map(category => {label: category.i18ns.title, value: category.publicUrl})} %}
-					{% include '@components/Molecules/ItemHeader/ItemHeader.html.twig' with { customText: "Stories"|trans, href: ""} %}
+					{% include '@components/Molecules/ItemHeader/ItemHeader.html.twig' with { customText: "Story"|trans, href: ""} %}
 					{% include '@components/Molecules/ItemHeader/ItemHeader.html.twig' with { customText: "Knowledge"|trans, href: ""} %}
 					{% include '@components/Molecules/ItemHeader/ItemHeader.html.twig' with { customText: "Professionals"|trans, href: ""} %}
 			</div>

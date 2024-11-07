@@ -1,5 +1,5 @@
 .Subheader {
-  background: var(--theme-lighter);
+  background: var(--theme-white);
   display: flex;
   align-items: center;
   &-titleOnly {
@@ -99,7 +99,7 @@
   }
   &-title {
     @apply h1;
-    color: var(--black);
+    color: var(--theme-dark);
   }
 
   &-title--search {
@@ -120,6 +120,7 @@
     }
     &--category {
       padding-top: rem-convert(16px);
+      color: var(--theme-dark);
       @screen md {
         padding-top: rem-convert(16px);
       }
@@ -129,9 +130,9 @@
     @apply paragraph-4;
     padding-top: rem-convert(16px);
     padding-bottom: rem-convert(16px);
-    color: var(--black);
+    color: var(--theme-dark);
   }
   &-link {
-    color: var(--black);
+    color: var(--theme-darkest);
   }
 }

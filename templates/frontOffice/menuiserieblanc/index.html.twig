@@ -22,11 +22,13 @@
     </div>
   <div class="grid grid-cols-2 lg:grid-cols-3  xl:grid-cols-4 gap-4 lg:gap-8 mb-[119px]">
         {% for product in products %}
-          {% include '@components/Organisms/Card/SimpleProduct/SimpleProduct.html.twig' with  { title: product.i18ns.title, button: { label: 'View product' | trans, href: product.publicUrl }, img: {url: asset("dist/images/placeholder.png"), alt:"placeholder"}} %}
+          {% set images = resources('/api/front/product_images', {'product.id': product.id, itemsPerPage:1, page: 1}) %}
+       
+          {% include '@components/Organisms/Card/SimpleProduct/SimpleProduct.html.twig' with  { title: product.i18ns.title, button: { label: 'View product' | trans, href: product.publicUrl }, img: {url:'/legacy-image-library/product_image_'~images[0]['id']~'/full/%5E*!594,594/0/default.webp', alt:"placeholder"}} %}
         {% endfor %}
       </div>
 
-    {{ component('Flexy:ProductCategory', {title: 'Our product categories' | trans})   }}
+    {{ component('Flexy:ProductCategory', {title: 'Our product ranges' | trans})   }}
 
     {% set achievements = 
       [

@@ -46,7 +46,10 @@ class CrossSelling
                     'href' => $item['publicUrl'],
                 ],
                 'img' => [
-                    'url' => '/legacy-image-library/product_image_'.$item['id'].'/full/%5E*!594,594/0/default.webp',
+                    'url' => '/legacy-image-library/product_image_'.$this->dataAccessService->resources('/api/front/product_images', [
+                        'itemsPerPage' => 1,
+                        'product.id' => $item["id"]
+                    ])[0]['id'].'/full/%5E*!594,594/0/default.webp',
                     'alt' => $item['i18ns']['title'],
                 ]
             ];

@@ -9,7 +9,7 @@
 	<div class='pb-6 text-theme-dark h2 '>{{ title }}</div>
 	<div class='CrossSelling slider'>
 		{% for product in products %}
-			{% include '@components/Organisms/Card/SimpleProduct/SimpleProduct.html.twig' with product|merge({img: {url: asset("dist/images/placeholder.png"), alt: product.title}}) %}
+			{% include '@components/Organisms/Card/SimpleProduct/SimpleProduct.html.twig' with product %}
 		{% endfor %} 
 	</div>
   {% if button %}
