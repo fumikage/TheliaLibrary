@@ -1,5 +1,5 @@
 :root {
-  --padding-button-sub: 22px;
+  --padding-button-sub: 16px;
   --padding-top-menu: 82px;
   --padding-x-menu: 55px;
   --padding-button-close: 24px;
@@ -17,7 +17,7 @@
 }
 @media screen and (max-width: theme('screens.lg')) {
   #Menu {
-    @apply hidden fixed inset-0 bg-white text-black;
+    @apply hidden fixed inset-0 bg-white text-black z-10;
 
     > ul {
       @apply h-full relative;
@@ -36,6 +36,7 @@
       }
       a {
         @apply py-[var(--padding-button-sub)];
+        text-decoration: none;
       }
       button {
         @apply p-[var(--padding-button-sub)];

@@ -13,13 +13,6 @@
         			<input class="ItemHeader-sub-input" type="radio" value="" name="{{ customText }}" checked="checked"/>
         			<p class="ItemHeader-sub-text">{{ customText }}</p>
       			</div>
-    	
-    		{# {% for sub in subs %}
-      			<div class="ItemHeader-sub-value">
-        			<input class="ItemHeader-sub-input" type="radio" id="{{ sub.value }}" value="{{ sub.value }}" name="{{ customText }}" {% if not placeholder and loop.index == 1 %}checked="checked"{% endif %}/>
-        				<p class="ItemHeader-sub-text">{{ sub.label }}</p>
-      			</div>
-    		{% endfor %} #}
   		</div>
   		<ul class="ItemHeader-sub-list">
     		{% for sub in subs %}

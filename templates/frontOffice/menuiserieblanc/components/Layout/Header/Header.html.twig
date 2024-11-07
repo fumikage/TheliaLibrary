@@ -1,5 +1,6 @@
 {% set type = type|default("generic") %}
-{% set categories = resources('/api/front/categories') %}
+{% set categories = resources('/api/front/categories')%}
+
 
 <header class='Header  {% if type == "sticky" %}is-sticky{% endif %} {% if type == "searchbar" %}Header--withSearchBar{% endif %}'>
 	<div class='flex'>
@@ -26,19 +27,46 @@
 			<button type="button" data-menu-close>
 				{{ ux_icon('close') }}
 			</button>
-		
-			<div class="Header-navigation" >
-	
-					{% include '@components/Molecules/ItemHeader/ItemHeader.html.twig' with { customText: "Products"|trans, href: "", subs: [
-      { value: 1, label: 'M.' },
-      { value: 2, label: 'Mme' },
-      { value: 3, label: 'Neutre / Non binaire / Agenre' },
-      { value: 4, label: 'Je ne souhaite pas répondre' }
-    ]} %}
+			{% set categoryContent %}
+			<div class="flex flex-col ">
+				{% for category in categories %}
+              	<a href={{category.publicUrl}} >{{category.i18ns.title}}</a>
+				{% endfor %}
+				</div>
+            {% endset %}
+			<ul class="Header-navigation block md:hidden bg-white">
+				{% include '@components/Molecules/Accordion/Accordion.html.twig' with {
+             		title: 'Products'|trans,
+              		content: categoryContent,
+              		iconPlus: "plus",
+              		iconMinus: "minus",
+            	} %}
+				{% include '@components/Molecules/Accordion/Accordion.html.twig' with {
+             		title: 'Stories'|trans,
+              		content: categoryContent,
+              		iconPlus: "plus",
+              		iconMinus: "minus",
+            	} %}
+					{% include '@components/Molecules/Accordion/Accordion.html.twig' with {
+             		title: 'Knowledge'|trans,
+              		content: categoryContent,
+              		iconPlus: "plus",
+              		iconMinus: "minus",
+            	} %}
+					{% include '@components/Molecules/Accordion/Accordion.html.twig' with {
+             		title: 'Professionals'|trans,
+              		content: categoryContent,
+              		iconPlus: "plus",
+              		iconMinus: "minus",
+            	} %}
+			</ul>
+			<div class="Header-navigation hidden md:flex" >
+					{% include '@components/Molecules/ItemHeader/ItemHeader.html.twig' with { customText: "Products"|trans, href: "", subs: categories|map(category => {label: category.i18ns.title, value: category.publicUrl})} %}
 					{% include '@components/Molecules/ItemHeader/ItemHeader.html.twig' with { customText: "Stories"|trans, href: ""} %}
 					{% include '@components/Molecules/ItemHeader/ItemHeader.html.twig' with { customText: "Knowledge"|trans, href: ""} %}
 					{% include '@components/Molecules/ItemHeader/ItemHeader.html.twig' with { customText: "Professionals"|trans, href: ""} %}
 			</div>
+			
 		</nav>
 	{% endif %}
 

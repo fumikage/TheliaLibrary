@@ -97,12 +97,13 @@
         rem-convert(16px);
       display: flex;
       justify-content: flex-start;
-      color: var(--black);
+      color: var(--theme-dark);
       outline: none;
+      text-decoration: none;
 
       &:hover,
       &:focus-visible {
-        background-color: var(--theme-light);
+        color: var(--theme-darkest);
       }
     }
   }

@@ -31,7 +31,6 @@ class ProductCategory
             'itemsPerPage' => 4,
         ]);
 
-        dump($categories);
         return array_map(function ($item) {
             return [
                 'title' => $item['i18ns']['title'] ?? "",
