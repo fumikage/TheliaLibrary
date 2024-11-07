@@ -26,13 +26,19 @@
 			<button type="button" data-menu-close>
 				{{ ux_icon('close') }}
 			</button>
-			<ul class="Header-navigation" data-menu-sub="0">
+		
+			<div class="Header-navigation" >
 	
-					{% include '@components/Molecules/ItemHeader/ItemHeader.html.twig' with { customText: "Products"|trans, href: ""} %}
+					{% include '@components/Molecules/ItemHeader/ItemHeader.html.twig' with { customText: "Products"|trans, href: "", subs: [
+      { value: 1, label: 'M.' },
+      { value: 2, label: 'Mme' },
+      { value: 3, label: 'Neutre / Non binaire / Agenre' },
+      { value: 4, label: 'Je ne souhaite pas répondre' }
+    ]} %}
 					{% include '@components/Molecules/ItemHeader/ItemHeader.html.twig' with { customText: "Stories"|trans, href: ""} %}
 					{% include '@components/Molecules/ItemHeader/ItemHeader.html.twig' with { customText: "Knowledge"|trans, href: ""} %}
 					{% include '@components/Molecules/ItemHeader/ItemHeader.html.twig' with { customText: "Professionals"|trans, href: ""} %}
-			</ul>
+			</div>
 		</nav>
 	{% endif %}
 

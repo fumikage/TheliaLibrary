@@ -1,34 +1,38 @@
 {% set href = href|default('') %}
 {% set classes = classes|default('') %}
 {% set customText = customText|default('') %}
-{% set sub = sub|default(null) %}
+{% set subs = subs|default(null) %}
 
 <li class="flex">
+	
+	{% if subs %}
+	<div class="ItemHeader-sub">
+ 		<div class="ItemHeader-sub-current" tabindex="1">
+    		
+      			<div class="ItemHeader-sub-value ItemHeader">
+        			<input class="ItemHeader-sub-input" type="radio" value="" name="{{ customText }}" checked="checked"/>
+        			<p class="ItemHeader-sub-text">{{ customText }}</p>
+      			</div>
+    	
+    		{# {% for sub in subs %}
+      			<div class="ItemHeader-sub-value">
+        			<input class="ItemHeader-sub-input" type="radio" id="{{ sub.value }}" value="{{ sub.value }}" name="{{ customText }}" {% if not placeholder and loop.index == 1 %}checked="checked"{% endif %}/>
+        				<p class="ItemHeader-sub-text">{{ sub.label }}</p>
+      			</div>
+    		{% endfor %} #}
+  		</div>
+  		<ul class="ItemHeader-sub-list">
+    		{% for sub in subs %}
+      			<li class="ItemHeader-sub-listItem">
+        			<a tabindex="1" class="ItemHeader-sub-option" href="{{ sub.value }}" aria-hidden="true">{{ sub.label }}</a>
+      			</li>
+    		{% endfor %}
+  		</ul>
+	</div>
+	{% else %}
 	<a href='{{ href }}' class='ItemHeader {{ classes }}'>
 		{{ customText }}
 	</a>
-	{% if sub %}
-		<button type="button" data-menu-item="{{sub}}">{{ ux_icon("arrow-right") }}</button>
-		<ul data-menu-sub="{{sub}}" data-menu-previous="0">
-			<li>
-				<a href="#0">Titre sous menu</a>
-				<button type="button" data-menu-item="5">{{ ux_icon("arrow-right") }}</button>
-				<ul data-menu-sub="5" data-menu-previous="{{sub}}">
-					<li>
-						<a href="#0">Titre sous sous menu</a>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<a href="#0">Titre sous menu</a>
-			</li>
-			<li>
-				<a href="#0">Titre sous menu</a>
-			</li>
-			<li>
-				<a href="#0">Titre sous menu</a>
-			</li>
-		</ul>
 	{% endif %}
 
 </li>

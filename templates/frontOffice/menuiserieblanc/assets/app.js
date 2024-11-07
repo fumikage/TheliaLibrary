@@ -17,12 +17,14 @@ import { quantityButton } from '@components/Molecules/Button/button';
 import { FieldInputFunction } from '@components/Molecules/Fields/FieldInput/FieldInput';
 import { ModalFunction } from '@components/Molecules/Modal/Modal';
 import { ToggleMenuFunction } from '@components/Molecules/ToggleMenu/ToggleMenu';
+import Dropdown from '@components/Molecules/Dropdown/Dropdown';
 import { slider } from '@js/slider';
 import ProductGallery from '@components/Layout/ProductGallery/ProductGallery';
 import PasswordControlsFunction from '@components/Molecules/PasswordControls/PasswordControls';
 import headerButtonProfileFunction from '@components/Molecules/HeaderButton/HeaderButtonProfile';
 
 import StepsFunction from '@components/Molecules/Step/Steps.js';
+import ItemHeaderSubFunction from '../components/Molecules/ItemHeader/ItemHeader.js';
 
 function main() {
   document.body.classList.remove('no-js');
@@ -38,6 +40,8 @@ function main() {
   FieldInputFunction();
   ModalFunction();
   ToggleMenuFunction();
+  Dropdown();
+  ItemHeaderSubFunction();
   headerButtonProfileFunction();
 }
 

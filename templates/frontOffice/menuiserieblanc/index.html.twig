@@ -10,7 +10,12 @@
 
 	{% include '@components/Layout/Hero/Hero.html.twig' with { title: "Des baies coulissantes bois sur-mesure pour une maison passive", image: {url :asset("dist/images/hero.png"), alt: 'hero image'} } %}
 
-
+		{% include '@components/Molecules/ItemHeader/ItemHeader.html.twig' with { customText: "Products"|trans, href: "", subs: [
+      { value: 1, label: 'M.' },
+      { value: 2, label: 'Mme' },
+      { value: 3, label: 'Neutre / Non binaire / Agenre' },
+      { value: 4, label: 'Je ne souhaite pas répondre' }
+    ]} %}
   {% set products = resources('/api/front/products', {'productCategories.category.id': '9', itemsPerPage:8, page: 1}) %}
   <div class="px-6">
     <div class="my-16">
