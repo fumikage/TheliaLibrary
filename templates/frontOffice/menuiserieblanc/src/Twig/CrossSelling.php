@@ -16,6 +16,7 @@ use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use TwigEngine\Service\DataAccess\DataAccessService;
 use Symfony\UX\TwigComponent\Attribute\ExposeInTemplate;
+use TheliaSmarty\Template\Plugins\Assets;
 
 #[AsTwigComponent(template: 'components/Layout/CrossSelling/CrossSelling.html.twig')]
 class CrossSelling
@@ -39,6 +40,11 @@ class CrossSelling
         ]);
 
         return array_map(function ($item) {
+            $productImages = $this->dataAccessService->resources('/api/front/product_images', [
+                'itemsPerPage' => 1,
+                'product.id' => $item["id"]
+            ]);
+
             return [
                 'title' => $item['i18ns']['title'],
                 'button' => [
@@ -46,10 +52,7 @@ class CrossSelling
                     'href' => $item['publicUrl'],
                 ],
                 'img' => [
-                    'url' => '/legacy-image-library/product_image_'.$this->dataAccessService->resources('/api/front/product_images', [
-                        'itemsPerPage' => 1,
-                        'product.id' => $item["id"]
-                    ])[0]['id'].'/full/%5E*!594,594/0/default.webp',
+                    'url' => $productImages ? '/legacy-image-library/product_image_'.$productImages[0]["id"].'/full/%5E*!594,594/0/default.webp' : "/templates-assets/frontOffice/menuiserieblanc/dist/images/placeholder.png",
                     'alt' => $item['i18ns']['title'],
                 ]
             ];

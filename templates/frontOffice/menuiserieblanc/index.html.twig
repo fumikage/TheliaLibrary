@@ -23,8 +23,8 @@
   <div class="grid grid-cols-2 lg:grid-cols-3  xl:grid-cols-4 gap-4 lg:gap-8 mb-[119px]">
         {% for product in products %}
           {% set images = resources('/api/front/product_images', {'product.id': product.id, itemsPerPage:1, page: 1}) %}
-       
-          {% include '@components/Organisms/Card/SimpleProduct/SimpleProduct.html.twig' with  { title: product.i18ns.title, button: { label: 'View product' | trans, href: product.publicUrl }, img: {url:'/legacy-image-library/product_image_'~images[0]['id']~'/full/%5E*!594,594/0/default.webp', alt:"placeholder"}} %}
+      
+          {% include '@components/Organisms/Card/SimpleProduct/SimpleProduct.html.twig' with  { title: product.i18ns.title, button: { label: 'View product' | trans, href: product.publicUrl }, img: {url:images ? '/legacy-image-library/product_image_'~images[0]['id']~'/full/%5E*!594,594/0/default.webp' : asset("dist/images/placeholder2.webp"), alt:"placeholder"}} %}
         {% endfor %}
       </div>
 
