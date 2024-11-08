@@ -9,7 +9,7 @@
 	{% include '@components/Layout/Subheader/Category/SubheaderCategory.html.twig' with {title: attr('category', 'title'), description: attr('category', 'description'), nbProducts: products|length}  %}
   {{ component('Flexy:Layout:CategoryProduct', {categoryId: attr('category', 'id'), page}) }}
 
-	{% include '@components/Layout/Reinsurance/Reinsurance.html.twig' with { data: [
+	{# {% include '@components/Layout/Reinsurance/Reinsurance.html.twig' with { data: [
       {
         strongText: 'Free delivery' | trans,
         text: 'For any order over €100' | trans,
@@ -31,5 +31,5 @@
         link: '#',
         icon: 'reinsurance-satisfied'
       }
-    ] } %}
+    ] } %} #}
 {% endblock %}

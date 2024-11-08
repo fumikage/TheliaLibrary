@@ -33,14 +33,17 @@ class ProductCategory
 
         return array_map(function ($item) {
             return [
-                'title' => $item['i18ns']['title'],
+                'title' => $item['i18ns']['title'] ?? "",
                 'button' => [
                     'label' => $this->translator->trans('Discover'),
                     'href' => $item['publicUrl'],
                 ],
                 'img' => [
-                    'url' => '/legacy-image-library/category_image_'.$item['id'].'/full/%5E*!386,280/0/default.webp',
-                    'alt' => $item['i18ns']['title'],
+                    'url' =>   '/legacy-image-library/category_image_'.$this->dataAccessService->resources('/api/front/category_images', [
+                        'itemsPerPage' => 1,
+                        'category.id' => $item["id"]
+                    ])[0]['id'].'/full/%5E*!594,594/0/default.webp',
+                    'alt' => $item['i18ns']['title'] ?? "",
                 ],
                 'url' => $item['publicUrl'],
             ];

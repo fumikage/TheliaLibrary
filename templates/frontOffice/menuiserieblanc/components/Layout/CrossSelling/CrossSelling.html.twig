@@ -9,7 +9,7 @@
 	<div class='pb-6 text-theme-dark h2 '>{{ title }}</div>
 	<div class='CrossSelling slider'>
 		{% for product in products %}
-			{% include '@components/Organisms/Card/SimpleProduct/SimpleProduct.html.twig' with {title: product.productTitle, button: { href: product.productLink, label: "Voir le produit" }} %}
+			{% include '@components/Organisms/Card/SimpleProduct/SimpleProduct.html.twig' with product %}
 		{% endfor %} 
 	</div>
   {% if button %}
