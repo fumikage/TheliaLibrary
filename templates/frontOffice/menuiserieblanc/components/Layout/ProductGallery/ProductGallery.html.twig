@@ -1,8 +1,7 @@
 
 {% set images = resources('/api/front/product_images', {'product.id':productId}) %}
-{% if images %}
-  {% set imgId = images|first.id  %}
-{% endif %}
+{% set imgId = images|first.id|default(null)  %}
+
 
 <ul class="absolute top-0 left-0 md:transform-none hidden -translate-x-full lg:translate-x-0 sm:block">
   {% for image in images %}
@@ -12,5 +11,5 @@
   {% endfor %}
 </ul>
 <div>
-  <img id="MainImage" src="{{ imgId ? "/legacy-image-library/product_image_"~imgId~"/full/%5E*!594,594/0/default.webp" : "@assets/images/placeholder2.webp"}}" loading="lazy"  alt="{{ attr('product', 'title') }}"/>
+  <img id="MainImage" src="{{ imgId ? "/legacy-image-library/product_image_"~imgId~"/full/%5E*!594,594/0/default.webp" :asset("dist/images/placeholder2.webp")}}" loading="lazy"  alt="{{ attr('product', 'title') }}"/>
 </div>
