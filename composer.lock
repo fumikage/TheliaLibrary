@@ -1768,16 +1768,16 @@
         },
         {
             "name": "lcobucci/jwt",
-            "version": "5.4.1",
+            "version": "5.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lcobucci/jwt.git",
-                "reference": "848815d2287abd5d3c285482f8e1f501b289a2e7"
+                "reference": "ea1ce71cbf9741e445a5914e2f67cdbb484ff712"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lcobucci/jwt/zipball/848815d2287abd5d3c285482f8e1f501b289a2e7",
-                "reference": "848815d2287abd5d3c285482f8e1f501b289a2e7",
+                "url": "https://api.github.com/repos/lcobucci/jwt/zipball/ea1ce71cbf9741e445a5914e2f67cdbb484ff712",
+                "reference": "ea1ce71cbf9741e445a5914e2f67cdbb484ff712",
                 "shasum": ""
             },
             "require": {
@@ -1825,7 +1825,7 @@
             ],
             "support": {
                 "issues": "https://github.com/lcobucci/jwt/issues",
-                "source": "https://github.com/lcobucci/jwt/tree/5.4.1"
+                "source": "https://github.com/lcobucci/jwt/tree/5.4.2"
             },
             "funding": [
                 {
@@ -1837,7 +1837,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2024-11-06T06:16:04+00:00"
+            "time": "2024-11-07T12:54:35+00:00"
         },
         {
             "name": "lexik/jwt-authentication-bundle",
@@ -9422,11 +9422,11 @@
         },
         {
             "name": "thelia/flexy",
-            "version": "dev-feat/frontend",
+            "version": "dev-flexy",
             "dist": {
                 "type": "path",
                 "url": "templates/frontOffice/menuiserieblanc",
-                "reference": "1084e5ab6a895d3d02566c807d1cd2cab910c7ff"
+                "reference": "d73fbff40c9ef40f106bacfc90fff13cc5aef6ef"
             },
             "require": {
                 "composer/installers": "~1.0",
@@ -10646,21 +10646,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/thelia-modules/TwigEngine.git",
-<<<<<<< HEAD
                 "reference": "010a9d64bbf5b5cd437ef7e247d7ab2f575df4dd"
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/thelia-modules/TwigEngine/zipball/010a9d64bbf5b5cd437ef7e247d7ab2f575df4dd",
                 "reference": "010a9d64bbf5b5cd437ef7e247d7ab2f575df4dd",
-=======
-                "reference": "7a6390fa73c93e1cb9959e926732ba692212ec3e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/thelia-modules/TwigEngine/zipball/7a6390fa73c93e1cb9959e926732ba692212ec3e",
-                "reference": "7a6390fa73c93e1cb9959e926732ba692212ec3e",
->>>>>>> 26b89a0 (feat: add ItemHeader sub menu)
                 "shasum": ""
             },
             "require": {
@@ -10681,11 +10672,7 @@
                 "issues": "https://github.com/thelia-modules/TwigEngine/issues",
                 "source": "https://github.com/thelia-modules/TwigEngine/tree/twig"
             },
-<<<<<<< HEAD
             "time": "2024-11-06T16:40:18+00:00"
-=======
-            "time": "2024-11-06T15:29:58+00:00"
->>>>>>> 26b89a0 (feat: add ItemHeader sub menu)
         },
         {
             "name": "thelia/url-sanitizer-module",
@@ -10820,16 +10807,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v3.14.0",
+            "version": "v3.14.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "126b2c97818dbff0cdf3fbfc881aedb3d40aae72"
+                "reference": "0b6f9d8370bb3b7f1ce5313ed8feb0fafd6e399a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/126b2c97818dbff0cdf3fbfc881aedb3d40aae72",
-                "reference": "126b2c97818dbff0cdf3fbfc881aedb3d40aae72",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/0b6f9d8370bb3b7f1ce5313ed8feb0fafd6e399a",
+                "reference": "0b6f9d8370bb3b7f1ce5313ed8feb0fafd6e399a",
                 "shasum": ""
             },
             "require": {
@@ -10883,7 +10870,7 @@
             ],
             "support": {
                 "issues": "https://github.com/twigphp/Twig/issues",
-                "source": "https://github.com/twigphp/Twig/tree/v3.14.0"
+                "source": "https://github.com/twigphp/Twig/tree/v3.14.2"
             },
             "funding": [
                 {
@@ -10895,7 +10882,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-09-09T17:55:12+00:00"
+            "time": "2024-11-07T12:36:22+00:00"
         },
         {
             "name": "webmozart/assert",
@@ -11191,5 +11178,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.3.0"
 }
