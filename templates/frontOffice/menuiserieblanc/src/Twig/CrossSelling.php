@@ -27,7 +27,7 @@ class CrossSelling
     #[ExposeInTemplate]
     private array $products;
 
-    public function __construct(DataAccessService $dataAccessService,private TranslatorInterface $translator)
+    public function __construct(DataAccessService $dataAccessService, private TranslatorInterface $translator)
     {
         $this->dataAccessService = $dataAccessService;
     }
@@ -47,6 +47,7 @@ class CrossSelling
 
             return [
                 'title' => $item['i18ns']['title'],
+                'url' => $item['publicUrl'],
                 'button' => [
                     'label' => $this->translator->trans('View product'),
                     'href' => $item['publicUrl'],
@@ -56,6 +57,6 @@ class CrossSelling
                     'alt' => $item['i18ns']['title'],
                 ]
             ];
-       }, $this->products);
+        }, $this->products);
     }
 }

@@ -27,37 +27,54 @@ class CategoryProduct
     #[ExposeInTemplate]
     private array $products;
 
+    #[ExposeInTemplate]
+    private array $pagination;
+
+    const  ITEM_PER_PAGE = 15;
+
     public function __construct(DataAccessService $dataAccessService, private TranslatorInterface $translator)
     {
         $this->dataAccessService = $dataAccessService;
     }
     
+    public function getPagination(): array
+    {
+        $this->pagination = [];
+        $this->pagination['page'] = $this->page;
+        $this->pagination['totalPages'] = ceil(count($this->dataAccessService->resources('/api/front/products', [
+          'productCategories.category.id' => $this->categoryId,
+        ])) / self::ITEM_PER_PAGE);
+        $this->pagination['prevPage'] = $this->page > 1 ? $this->page - 1 : null;
+        $this->pagination['nextPage'] = count($this->products) > self::ITEM_PER_PAGE ? $this->page + 1 : null;
+
+        return $this->pagination;
+    }
 
     public function getProducts(): array
     {
+      
         $this->products = $this->dataAccessService->resources('/api/front/products', [
             'productCategories.category.id' => $this->categoryId,
-            'itemsPerPage' => 9,
+            'itemsPerPage' => self::ITEM_PER_PAGE,
             'page' => $this->page,
         ]);
-
-       return array_map(function ($item) {
-        $productImages = $this->dataAccessService->resources('/api/front/product_images', [
-            'itemsPerPage' => 1,
-            'product.id' => $item["id"]
-        ]);
+        
+        $results = array_map(function ($item) {
+            $productImages = $this->dataAccessService->resources('/api/front/product_images', [
+                'itemsPerPage' => 1,
+                'product.id' => $item["id"]
+            ]);
 
             return [
                 'title' => $item['i18ns']['title'],
-                'button' => [
-                    'label' => $this->translator->trans('View product'),
-                    'href' => $item['publicUrl'],
-                ],
+                'url' => $item['publicUrl'],
                 'img' => [
                     'url' =>  $productImages ? '/legacy-image-library/product_image_'.$productImages[0]['id'].'/full/%5E*!594,594/0/default.webp' : "/templates-assets/frontOffice/menuiserieblanc/dist/images/placeholder.png",
                     'alt' => $item['i18ns']['title'],
                 ]
             ];
-       }, $this->products);
+        }, $this->products);
+
+        return $results;
     }
 }

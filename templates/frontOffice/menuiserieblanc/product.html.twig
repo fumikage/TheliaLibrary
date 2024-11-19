@@ -6,9 +6,11 @@
 {% endblock %}
 
 {% set productId = attr('product', 'id') %}
-{% block title %}{{ attr('product', 'title') }}{% endblock %}
-
 {% set product = resources('/api/front/products/' ~ productId) %}
+
+{% block title %}{{ product.i18ns.title }}{% endblock %}
+
+
 {% set productCategory = product.productCategories|filter(c => c.defaultCategory)|first.category %}
 
 {% block body %}
@@ -40,10 +42,10 @@
          
         </div>
         <aside class="lg:w-[400px] lg:mx-0 md:w-[540px] mx-auto">
-          <h1 class="mb-3 h3 text-theme-dark">{{ attr('product', 'title') }}</h1>
- <section id="description" class="">
+          <h1 class="mb-3 h3 text-theme-dark">{{ product.i18ns.title }}</h1>
+          <section id="description" class="">
             {% set descriptionContent %}
-              <p>{{product.i18ns.description}}</p>
+              <p>{{product.i18ns.description|raw}}</p>
             {% endset %}
             {% set featuresContent %}
               <p>todo</p>

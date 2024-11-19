@@ -31,10 +31,12 @@ class ProductCategory
             'itemsPerPage' => 4,
         ]);
 
+        
+
         return array_map(function ($item) {
             $categoryImages = $this->dataAccessService->resources('/api/front/category_images', [
                 'itemsPerPage' => 1,
-                'category.id' => $item["id"]
+                'category' => $item["id"]
             ]);
             return [
                 'title' => $item['i18ns']['title'] ?? "",
