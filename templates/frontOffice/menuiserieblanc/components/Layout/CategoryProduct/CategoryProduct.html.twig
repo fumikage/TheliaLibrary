@@ -3,7 +3,7 @@
 <section class="CategoryProduct">
 
   <header class="CategoryProduct_header">
-    {% include '@components/Layout/Subheader/Category/SubheaderCategory.html.twig' with {title: category.i18ns.title|default(''), description: category.i18ns.description|default(''), nbProducts: products|length}  %}
+    {% include '@components/Layout/Subheader/Category/SubheaderCategory.html.twig' with {title: category.i18ns.title|default(''), nbProducts: products|length}  %}
   </header>
   
   <aside class="CategoryProduct_filters">
@@ -71,8 +71,8 @@
     } %}
     </div>
 
-    <p class="paragraph-4 lg:paragraph-2 lg:pt-[56px] lg:pb-[96px] max-w-[664px] pt-[102px] pb-[52px] mx-auto text-theme-dark">
-      {{ attr('category', 'description') }}
+    <p class="paragraph-4 lg:paragraph-2 lg:pt-[56px] lg:pb-[96px] max-w-[664px] pt-[102px] pb-[52px] text-theme-dark">
+      {{ category.i18ns.description|default('')|raw }}
     </p>
   </div>
 </section>

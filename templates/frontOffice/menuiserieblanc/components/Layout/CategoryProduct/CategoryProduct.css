@@ -20,6 +20,8 @@
     .Subheader {
       margin-right: -3rem;
       margin-left: -3rem;
+      margin-top: 90px;
+      min-height: auto;
     }
   }
 

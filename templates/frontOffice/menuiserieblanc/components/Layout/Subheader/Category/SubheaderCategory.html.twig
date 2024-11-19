@@ -6,9 +6,11 @@
 <div class='Subheader Subheader--category'>
   <div class='flex flex-col w-full mx-auto'>
     <h1 class='Subheader-title'>{{ title }}</h1>
+    {% if description %}
     <div class='Subheader-description'>
-      {{ description }}
+      {{ description |raw }}
     </div>
+    {% endif %}
     {# 
     <div class='underline Subheader-link'>
       <a href='#' class='link-large'>{{ 'Read more'|trans }}</a>
