@@ -5,28 +5,26 @@
 {% block body %}
 
 
-
-
-
 	{% include '@components/Layout/Hero/Hero.html.twig' with { title: "Des baies coulissantes bois sur-mesure pour une maison passive", image: {url :asset("dist/images/hero.png"), alt: 'hero image'} } %}
 
   {% set products = resources('/api/front/products', {'productCategories.category.id': '9', itemsPerPage:8, page: 1}) %}
-  <div class="px-6">
+  <div class="px-6 lg:max-w-[1720px] mx-auto">
     <div class="my-16">
-      <div class="h1 text-theme-dark mb-4">
+      <div class="mb-4 h1 text-theme-dark">
       Nos fenêtres sur mesure, fabrication Française
       </div>
-      <div class="paragraph-0  text-theme-dark">
+      <div class="paragraph-0 text-theme-dark">
         Spécialiste des fenêtres sur-mesure qui allient esthétique, performance et qualité française
       </div>
     </div>
-  <div class="grid grid-cols-2 lg:grid-cols-3  xl:grid-cols-4 gap-4 lg:gap-8 mb-[119px]">
+
+    <div class="grid grid-cols-2 lg:grid-cols-3  xl:grid-cols-4 gap-4 lg:gap-8 mb-[119px]">
         {% for product in products %}
           {% set images = resources('/api/front/product_images', {'product.id': product.id, itemsPerPage:1, page: 1}) %}
       
           {% include '@components/Organisms/Card/SimpleProduct/SimpleProduct.html.twig' with  { title: product.i18ns.title, button: { label: 'View product' | trans, href: product.publicUrl }, img: {url:images ? '/legacy-image-library/product_image_'~images[0]['id']~'/full/%5E*!594,594/0/default.webp' : asset("dist/images/placeholder2.webp"), alt:"placeholder"}} %}
         {% endfor %}
-      </div>
+    </div>
 
     {{ component('Flexy:ProductCategory', {title: 'Our product ranges' | trans})   }}
 
@@ -54,28 +52,32 @@
     
     %}
 
-  {{ component('Layout:Achievements:Achievements', {title: 'Our achievements' | trans, achievements, button: { href: '#', label: 'All our achievements' | trans }})   }}
-</div>
-<div class="bg-theme-lighter">
-  {% include '@components/Organisms/MediaDisplayer/MediaDisplayer.html.twig' with { title: "Ici un titre en rapport avec la video", url: "https://www.youtube.com/embed/E-rMkZ23naE?si=qs6Ua7r8aGxxTfbm" } %}
-</div>
-{% set highlights = 
-  [
-    {
-      img: { url: asset("dist/images/highlight2.png"), alt: '' },
-      title: "Ici un titre pour parler de l'atelier",
-      description: 'La Menuiserie Blanc, située à Savigneux, est une entreprise spécialisée dans la fabrication de fenêtres sur-mesure en bois et en aluminium-bois.',
-      button: { label: 'Découvrir notre atelier', href: '#' }
-    },
-     {
-      img: { url: asset("dist/images/highlight1.png"), alt: '' },
-      title: "Ici un titre pour parler de l'atelier",
-      description: 'La Menuiserie Blanc, située à Savigneux, est une entreprise spécialisée dans la fabrication de fenêtres sur-mesure en bois et en aluminium-bois.',
-      button: { label: 'Découvrir notre atelier', href: '#' }
-}
-  ]
-%}
-  {% include '@components/Layout/Highlights/Highlights.html.twig' with highlights %}
+    {{ component('Layout:Achievements:Achievements', {title: 'Our achievements' | trans, achievements, button: { href: '#', label: 'All our achievements' | trans }})   }}
+  </div>
+
+  <div class="bg-theme-lighter">
+    {% include '@components/Organisms/MediaDisplayer/MediaDisplayer.html.twig' with { title: "Ici un titre en rapport avec la video", url: "https://www.youtube.com/embed/E-rMkZ23naE?si=qs6Ua7r8aGxxTfbm" } %}
+  </div>
+
+  {% set highlights = 
+    [
+      {
+        img: { url: asset("dist/images/highlight2.png"), alt: '' },
+        title: "Ici un titre pour parler de l'atelier",
+        description: 'La Menuiserie Blanc, située à Savigneux, est une entreprise spécialisée dans la fabrication de fenêtres sur-mesure en bois et en aluminium-bois.',
+        button: { label: 'Découvrir notre atelier', href: '#' }
+      },
+      {
+        img: { url: asset("dist/images/highlight1.png"), alt: '' },
+        title: "Ici un titre pour parler de l'atelier",
+        description: 'La Menuiserie Blanc, située à Savigneux, est une entreprise spécialisée dans la fabrication de fenêtres sur-mesure en bois et en aluminium-bois.',
+        button: { label: 'Découvrir notre atelier', href: '#' }
+      }
+    ]
+  %}
+  <div class="px-6 lg:max-w-[1720px] mx-auto">
+    {% include '@components/Layout/Highlights/Highlights.html.twig' with highlights %}
+  </div>
 
 
 {% endblock %}
