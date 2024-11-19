@@ -25,16 +25,19 @@
     position: relative;
     background-color: var(--white);
 
+    &:focus,
+    &:hover {
+      .ItemHeader-sub-list {
+        opacity: 1;
+        animation-name: none;
+      }
+    }
+
     &-current {
       position: relative;
       cursor: pointer;
       outline: none;
       height: 100%;
-
-      &:focus + .ItemHeader-sub-list {
-        opacity: 1;
-        animation-name: none;
-      }
 
       &:focus + .ItemHeader-sub-list .ItemHeader-sub-option {
         cursor: pointer;
@@ -90,7 +93,7 @@
     }
 
     &-option {
-      @apply paragraph-4;
+      font-size: 1rem;
       width: max-content;
       background-color: var(--white);
       padding: rem-convert(16px) rem-convert(44px) rem-convert(16px)
