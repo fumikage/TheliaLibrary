@@ -7,7 +7,8 @@
 
 	{% include '@components/Layout/Hero/Hero.html.twig' with { title: "Des baies coulissantes bois sur-mesure pour une maison passive", image: {url :asset("dist/images/hero.png"), alt: 'hero image'} } %}
 
-  {% set products = resources('/api/front/products', {'productCategories.category.id': '9', itemsPerPage:8, page: 1}) %}
+  {% set products = resources('/api/front/products', {'productCategories.category.id': 1, itemsPerPage:8, page: 1}) %}
+
   <div class="px-6 lg:max-w-[1720px] mx-auto">
     <div class="my-16">
       <div class="mb-4 h1 text-theme-dark">
@@ -22,7 +23,7 @@
         {% for product in products %}
           {% set images = resources('/api/front/product_images', {'product.id': product.id, itemsPerPage:1, page: 1}) %}
       
-          {% include '@components/Organisms/Card/SimpleProduct/SimpleProduct.html.twig' with  { title: product.i18ns.title, button: { label: 'View product' | trans, href: product.publicUrl }, img: {url:images ? '/legacy-image-library/product_image_'~images[0]['id']~'/full/%5E*!594,594/0/default.webp' : asset("dist/images/placeholder2.webp"), alt:"placeholder"}} %}
+          {% include '@components/Organisms/Card/SimpleProduct/SimpleProduct.html.twig' with  { title: product.i18ns.title|default(''), button: { label: 'View product' | trans, href: product.publicUrl }, img: {url:images ? '/legacy-image-library/product_image_'~images[0]['id']~'/full/%5E*!594,594/0/default.webp' : asset("dist/images/placeholder2.webp"), alt:"placeholder"}} %}
         {% endfor %}
     </div>
 
