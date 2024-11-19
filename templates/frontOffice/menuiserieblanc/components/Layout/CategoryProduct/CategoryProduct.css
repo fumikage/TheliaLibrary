@@ -1,0 +1,33 @@
+.CategoryProduct {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+
+  @apply px-6 lg:px-[120px];
+
+  column-gap: 115px;
+  @screen lg {
+    grid-template-columns: 310px 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      '. header'
+      'filters products';
+  }
+
+  &_header {
+    grid-area: header;
+
+    .Subheader {
+      margin-right: -3rem;
+      margin-left: -3rem;
+    }
+  }
+
+  &_filters {
+    grid-area: filters;
+  }
+
+  &_products {
+    grid-area: products;
+  }
+}
