@@ -9,9 +9,11 @@
     <div class='Subheader-description'>
       {{ description }}
     </div>
+    {# 
     <div class='underline Subheader-link'>
       <a href='#' class='link-large'>{{ 'Read more'|trans }}</a>
     </div>
+    #}
     <div class='Subheader-info Subheader-info--category'>
       <div>{{ nbProducts }} {{ 'product(s)'|trans }}</div>
       {% include '@components/Molecules/Button/Button.html.twig' with {text: 'Filter & Sort'|trans, icon_left:'filter', variant: 'secondary', classes:'open-toggleMenu', name: 'mobileFilter'} %}
