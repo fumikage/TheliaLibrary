@@ -1,13 +1,20 @@
 {% set products = products|default([]) %}
 
-<section class="px-6 lg:px-[120px] py-6 lg:flex lg:gap-[115px] lg:justify-between">
-  <div class="w-[310px] lg:block hidden mt-[44px] sticky top-20">
-    <div class="h7 mb-[22px] text-theme">{{ 'Filter'|trans }}</div>
+<section class="CategoryProduct">
 
-    <div>
-      {{ component('Flexy:Layout:FiltersProduct') }}
+  <header class="CategoryProduct_header">
+    {% include '@components/Layout/Subheader/Category/SubheaderCategory.html.twig' with {title: category.i18ns.title|default(''), description: category.i18ns.description|default(''), nbProducts: products|length}  %}
+  </header>
+  
+  <aside class="CategoryProduct_filters">
+    <div class="w-[310px] lg:block hidden mt-[44px] sticky top-20">
+      <div class="h7 mb-[22px] text-theme">{{ 'Filter'|trans }}</div>
+
+      <div>
+        {{ component('Flexy:Layout:FiltersProduct') }}
+      </div>
     </div>
-  </div>
+  </aside>
 
   {% set filters %}
   <div>
@@ -19,7 +26,7 @@
 
  
 
-  <div>
+  <div class="CategoryProduct_products">
     <div class="lg:justify-end lg:items-endmb-[29px] hidden lg:flex text-theme-dark">
       <span>{{ products|length }}
         {{ 'item(s)'|trans }}</span>

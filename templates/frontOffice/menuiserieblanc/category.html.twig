@@ -8,11 +8,9 @@
 
 {% block body %}
 
-	{% set products = resources('/api/front/products', {'productCategories.category.id': attr('category', 'id'), itemsPerPage:15, page: page}) %}
-
-	{% include '@components/Layout/Subheader/Category/SubheaderCategory.html.twig' with {title: category.i18ns.title|default(''), description: category.i18ns.description|default(''), nbProducts: products|length}  %}
+	{% set products = resources('/api/front/products', {'productCategories.category.id': attr('category', 'id'), itemsPerPage:15, page: page}) %}  
   
-  {{ component('Flexy:Layout:CategoryProduct', {categoryId: attr('category', 'id'), page}) }}
+  {{ component('Flexy:Layout:CategoryProduct', {categoryId: attr('category', 'id'), page, category}) }}
 
 	{# {% include '@components/Layout/Reinsurance/Reinsurance.html.twig' with { data: [
       {
