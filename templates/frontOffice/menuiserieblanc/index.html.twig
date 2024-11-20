@@ -1,6 +1,6 @@
 {%  extends 'base.html.twig' %}
 
-{% block title %}index{% endblock %}
+{% block title %}Menuiserie Blanc{% endblock %}
 
 {% block body %}
 
@@ -23,7 +23,7 @@
         {% for product in products %}
           {% set images = resources('/api/front/product_images', {'product.id': product.id, itemsPerPage:1, page: 1}) %}
       
-          {% include '@components/Organisms/Card/SimpleProduct/SimpleProduct.html.twig' with  { title: product.i18ns.title|default(''), button: { label: 'View product' | trans, href: product.publicUrl }, img: {url:images ? '/legacy-image-library/product_image_'~images[0]['id']~'/full/%5E*!594,594/0/default.webp' : asset("dist/images/placeholder2.webp"), alt:"placeholder"}} %}
+          {% include '@components/Organisms/Card/SimpleProduct/SimpleProduct.html.twig' with  { title: product.i18ns.title|default(''), url:product.publicUrl, button: { label: 'View product' | trans, href: product.publicUrl }, img: {url:images ? '/legacy-image-library/product_image_'~images[0]['id']~'/full/%5E*!594,594/0/default.webp' : asset("dist/images/placeholder2.webp"), alt:"placeholder"}} %}
         {% endfor %}
     </div>
 

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9c2e05e154f550c12c3b918dfedbc1f8",
+    "content-hash": "873429992ea34bee0d3fb026759f8cc6",
     "packages": [
         {
             "name": "api-platform/core",
@@ -10071,6 +10071,39 @@
                 "source": "https://github.com/thelia-modules/OpenApi/tree/2.2.29"
             },
             "time": "2024-09-23T06:44:06+00:00"
+        },
+        {
+            "name": "thelia/page-module",
+            "version": "1.2.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thelia-modules/Page.git",
+                "reference": "122bcaf86d3280c15923e2eaf372062467bcc3b2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thelia-modules/Page/zipball/122bcaf86d3280c15923e2eaf372062467bcc3b2",
+                "reference": "122bcaf86d3280c15923e2eaf372062467bcc3b2",
+                "shasum": ""
+            },
+            "require": {
+                "ext-imagick": "*",
+                "thelia/installer": "~1.1"
+            },
+            "type": "thelia-module",
+            "extra": {
+                "installer-name": "Page"
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0-or-later"
+            ],
+            "description": "Page module for Thelia",
+            "support": {
+                "issues": "https://github.com/thelia-modules/Page/issues",
+                "source": "https://github.com/thelia-modules/Page/tree/1.2.6"
+            },
+            "time": "2024-08-26T08:28:24+00:00"
         },
         {
             "name": "thelia/pdf-default-template",
