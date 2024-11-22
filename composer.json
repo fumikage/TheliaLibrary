@@ -26,8 +26,8 @@
     "thelia/url-sanitizer-module": "dev-main",
     "thelia/canonical-url-module": "dev-main",
     "thelia/short-code-meta-module": "dev-main",
-    "thelia/thelia-blocks-module": "dev-main",
-    "thelia/thelia-library-module": "dev-main",
+    "thelia/thelia-blocks-module": "dev-twig",
+    "thelia/thelia-library-module": "dev-twig",
     "thelia/product-loop-attribute-filter-module": "dev-main",
     "thelia/page-module": "^1.2"
   },

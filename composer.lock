@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "873429992ea34bee0d3fb026759f8cc6",
+    "content-hash": "75d930c05f133ece09405c03bd4d327a",
     "packages": [
         {
             "name": "api-platform/core",
@@ -9422,11 +9422,11 @@
         },
         {
             "name": "thelia/flexy",
-            "version": "dev-flexy",
+            "version": "dev-develop",
             "dist": {
                 "type": "path",
                 "url": "templates/frontOffice/menuiserieblanc",
-                "reference": "d73fbff40c9ef40f106bacfc90fff13cc5aef6ef"
+                "reference": "1084e5ab6a895d3d02566c807d1cd2cab910c7ff"
             },
             "require": {
                 "composer/installers": "~1.0",
@@ -10475,16 +10475,16 @@
         },
         {
             "name": "thelia/thelia-blocks-module",
-            "version": "dev-main",
+            "version": "dev-twig",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thelia-modules/TheliaBlocks.git",
-                "reference": "9f6a9fad0d4b3328ebb4446e173865945bfc0f45"
+                "reference": "a09a2dd237fb74607ae624b5b4ab1852d6d3a0a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thelia-modules/TheliaBlocks/zipball/9f6a9fad0d4b3328ebb4446e173865945bfc0f45",
-                "reference": "9f6a9fad0d4b3328ebb4446e173865945bfc0f45",
+                "url": "https://api.github.com/repos/thelia-modules/TheliaBlocks/zipball/a09a2dd237fb74607ae624b5b4ab1852d6d3a0a8",
+                "reference": "a09a2dd237fb74607ae624b5b4ab1852d6d3a0a8",
                 "shasum": ""
             },
             "require": {
@@ -10492,7 +10492,6 @@
                 "thelia/open-api-module": "^2.1.1|dev-main",
                 "thelia/short-code-module": "^2.0.0|dev-main"
             },
-            "default-branch": true,
             "type": "thelia-module",
             "extra": {
                 "installer-name": "TheliaBlocks"
@@ -10504,29 +10503,28 @@
             "description": "TheliaBlocks module for Thelia",
             "support": {
                 "issues": "https://github.com/thelia-modules/TheliaBlocks/issues",
-                "source": "https://github.com/thelia-modules/TheliaBlocks/tree/2.1.17"
+                "source": "https://github.com/thelia-modules/TheliaBlocks/tree/twig"
             },
-            "time": "2024-10-09T09:59:51+00:00"
+            "time": "2024-10-11T14:11:10+00:00"
         },
         {
             "name": "thelia/thelia-library-module",
-            "version": "dev-main",
+            "version": "dev-twig",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thelia-modules/TheliaLibrary.git",
-                "reference": "fc3c47775cb0e03b820dcfaa8735e90c449bd3a0"
+                "reference": "deff44446e7e4f814010fc6aa5fe5403239878df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thelia-modules/TheliaLibrary/zipball/fc3c47775cb0e03b820dcfaa8735e90c449bd3a0",
-                "reference": "fc3c47775cb0e03b820dcfaa8735e90c449bd3a0",
+                "url": "https://api.github.com/repos/thelia-modules/TheliaLibrary/zipball/deff44446e7e4f814010fc6aa5fe5403239878df",
+                "reference": "deff44446e7e4f814010fc6aa5fe5403239878df",
                 "shasum": ""
             },
             "require": {
                 "thelia/installer": "~1.3",
                 "thelia/open-api-module": "^2.1.1"
             },
-            "default-branch": true,
             "type": "thelia-module",
             "extra": {
                 "installer-name": "TheliaLibrary"
@@ -10538,9 +10536,9 @@
             "description": "Add a media library to Thelia",
             "support": {
                 "issues": "https://github.com/thelia-modules/TheliaLibrary/issues",
-                "source": "https://github.com/thelia-modules/TheliaLibrary/tree/1.2.7"
+                "source": "https://github.com/thelia-modules/TheliaLibrary/tree/twig"
             },
-            "time": "2024-05-14T13:28:59+00:00"
+            "time": "2024-11-22T14:01:18+00:00"
         },
         {
             "name": "thelia/thelia-migrate-country-module",
