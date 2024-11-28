@@ -29,7 +29,7 @@
     "thelia/thelia-blocks-module": "dev-twig",
     "thelia/thelia-library-module": "dev-twig",
     "thelia/product-loop-attribute-filter-module": "dev-main",
-    "thelia/page-module": "^1.2"
+    "thelia/page-module": "dev-twig"
   },
   "suggest": {
     "vlopes/maintenance-module": "Add a way to put your site in maintenance mode",

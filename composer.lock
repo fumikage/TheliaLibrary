@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "75d930c05f133ece09405c03bd4d327a",
+    "content-hash": "437731f175edb3ec445d309b898fe2b1",
     "packages": [
         {
             "name": "api-platform/core",
@@ -10074,16 +10074,16 @@
         },
         {
             "name": "thelia/page-module",
-            "version": "1.2.6",
+            "version": "dev-twig",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thelia-modules/Page.git",
-                "reference": "122bcaf86d3280c15923e2eaf372062467bcc3b2"
+                "reference": "3fc78be5c1c1ca5304fff278e094c8b4c86f1dcb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thelia-modules/Page/zipball/122bcaf86d3280c15923e2eaf372062467bcc3b2",
-                "reference": "122bcaf86d3280c15923e2eaf372062467bcc3b2",
+                "url": "https://api.github.com/repos/thelia-modules/Page/zipball/3fc78be5c1c1ca5304fff278e094c8b4c86f1dcb",
+                "reference": "3fc78be5c1c1ca5304fff278e094c8b4c86f1dcb",
                 "shasum": ""
             },
             "require": {
@@ -10101,9 +10101,9 @@
             "description": "Page module for Thelia",
             "support": {
                 "issues": "https://github.com/thelia-modules/Page/issues",
-                "source": "https://github.com/thelia-modules/Page/tree/1.2.6"
+                "source": "https://github.com/thelia-modules/Page/tree/twig"
             },
-            "time": "2024-08-26T08:28:24+00:00"
+            "time": "2024-11-28T10:18:42+00:00"
         },
         {
             "name": "thelia/pdf-default-template",
@@ -11203,7 +11203,8 @@
         "thelia/short-code-meta-module": 20,
         "thelia/thelia-blocks-module": 20,
         "thelia/thelia-library-module": 20,
-        "thelia/product-loop-attribute-filter-module": 20
+        "thelia/product-loop-attribute-filter-module": 20,
+        "thelia/page-module": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
