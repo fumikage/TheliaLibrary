@@ -1,16 +1,19 @@
 {%  extends 'base.html.twig' %}
 
-{% block title %}{{ page.title }}{% endblock %}
+{% set pageData = getPageData() %}
+{% set pageHTML = getTheliaBLocksRenderedContent(pageData.getVirtualColumn('block_group_content')) %}
+
+{% block title %}{{ pageData.title }}{% endblock %}
 
 {% block body %}
 
-  {% include '@components/Layout/Subheader/ContentPage/SubheaderContentPage.html.twig' with {title: page.title, description: page.chapo }  %}
+  {% include '@components/Layout/Subheader/ContentPage/SubheaderContentPage.html.twig' with {title: pageData.title, description: pageData.chapo }  %}
 
 	<div class="px-[25px] lg:pr-[225px] lg:pl-[250px] xl:pr-[325px] xl:pl-[350px] flex gap-[173px] mt-[25px] lg:mt-[54px] mb-[80px] lg:mb-[120px]">
 		<article class="wysiwyg">
-			{{ page.description|raw }}
+			{{ pageData.description|raw }}
 
-      {{pageHtmlRender|raw}}
+      {{pageHTML|raw}}
 		</article>
 	</div>
 

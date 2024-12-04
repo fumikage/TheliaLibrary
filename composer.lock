@@ -10078,12 +10078,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/thelia-modules/Page.git",
-                "reference": "3fc78be5c1c1ca5304fff278e094c8b4c86f1dcb"
+                "reference": "d18451930f8f60eb6e222fc1a152acb4186dc564"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thelia-modules/Page/zipball/3fc78be5c1c1ca5304fff278e094c8b4c86f1dcb",
-                "reference": "3fc78be5c1c1ca5304fff278e094c8b4c86f1dcb",
+                "url": "https://api.github.com/repos/thelia-modules/Page/zipball/d18451930f8f60eb6e222fc1a152acb4186dc564",
+                "reference": "d18451930f8f60eb6e222fc1a152acb4186dc564",
                 "shasum": ""
             },
             "require": {
@@ -10103,7 +10103,7 @@
                 "issues": "https://github.com/thelia-modules/Page/issues",
                 "source": "https://github.com/thelia-modules/Page/tree/twig"
             },
-            "time": "2024-11-28T10:18:42+00:00"
+            "time": "2024-12-04T14:20:13+00:00"
         },
         {
             "name": "thelia/pdf-default-template",
@@ -10479,12 +10479,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/thelia-modules/TheliaBlocks.git",
-                "reference": "a09a2dd237fb74607ae624b5b4ab1852d6d3a0a8"
+                "reference": "0d658c02d079f5c6c0ab8b86822ad73b133c1c18"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thelia-modules/TheliaBlocks/zipball/a09a2dd237fb74607ae624b5b4ab1852d6d3a0a8",
-                "reference": "a09a2dd237fb74607ae624b5b4ab1852d6d3a0a8",
+                "url": "https://api.github.com/repos/thelia-modules/TheliaBlocks/zipball/0d658c02d079f5c6c0ab8b86822ad73b133c1c18",
+                "reference": "0d658c02d079f5c6c0ab8b86822ad73b133c1c18",
                 "shasum": ""
             },
             "require": {
@@ -10505,7 +10505,7 @@
                 "issues": "https://github.com/thelia-modules/TheliaBlocks/issues",
                 "source": "https://github.com/thelia-modules/TheliaBlocks/tree/twig"
             },
-            "time": "2024-10-11T14:11:10+00:00"
+            "time": "2024-12-04T14:20:29+00:00"
         },
         {
             "name": "thelia/thelia-library-module",
