@@ -1,1 +1,3 @@
-<div class="tb-{{type.id}}">{{data.value|raw}}</div> coucou
+{% if data.value is defined %}
+<div class="tb-{{type.id}}">{{data.value|raw}}</div>
+{% endif %}

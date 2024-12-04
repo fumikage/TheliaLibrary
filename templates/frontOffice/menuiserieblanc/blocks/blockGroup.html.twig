@@ -1,0 +1,23 @@
+<div class="block-{{type.id}}">
+    {% for item in data.content  %}
+        {% set itemContain = [] %}
+        {% set renderTemplates = [] %}
+
+        {% for block in item  %}
+            {% if block.type.id %}
+                {% set itemContain = itemContain|merge([block.type.id]) %}
+                {% set renderTemplates = renderTemplates|merge([include('./blocks/' ~ block.type.id ~ '.html.twig', {
+                  data: block.data, 
+                  type: block.type
+                })]) %}
+
+
+            {% endif %}
+        {% endfor %}
+
+
+    <div data-tb-contain="{{itemContain|join(' ')}}">
+        {{renderTemplates|join(' ')|raw}}
+    </div>
+    {% endfor %}
+</div>
