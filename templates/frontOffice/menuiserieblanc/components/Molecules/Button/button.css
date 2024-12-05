@@ -32,7 +32,7 @@
     }
   }
   &--small {
-    padding: rem-convert(12px) rem-convert(12px);
+    padding: rem-convert(8px) rem-convert(8px);
     font-size: var(--font-size-button-small);
     font-weight: var(--font-weight-button-small);
     & > span {
