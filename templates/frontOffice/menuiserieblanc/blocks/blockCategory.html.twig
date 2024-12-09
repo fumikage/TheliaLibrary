@@ -1,0 +1,20 @@
+<div class="block-{{type.id}} grid grid-cols-2 xl:grid-cols-4 gap-4">
+	{% for categoryId in data.categoryList %}
+		{# TODO : gérer cas 404 quand ça sera possible de le faire #}
+		{% set category = resources('/api/front/categories/' ~ categoryId) %}
+		{% set images = resources('/api/front/category_images', {'category.id':categoryId}) %}
+
+		{% set title = category.i18ns.title|default("") %}
+    {# TODO : à voir si on garde ou pas la description ? #}
+    {% set description = category.i18ns.chapo|default("") %}
+		{% set url = category.publicUrl %}
+    {# TODO : revoir placeholder #}
+    {% set img = images[0] is defined 
+      ? { url:"/legacy-image-library/product_image_" ~ images[0].id ~ "/full/%5E*!594,594/0/default.webp", alt:title }
+      : { url:"https://place-hold.it/250x250", alt:"placeholder" }
+    %}
+
+		{% include 'frontOffice/menuiserieblanc/components/Organisms/CategoryCard/CategoryCard.html.twig' with { title:title, url:url, img:img, description:description} %}
+
+	{% endfor %}
+</div>

@@ -1,0 +1,5 @@
+{% if data.type == 'hr' %}
+  <hr class="tb-{{type.id}} border-theme-light my-6 md:my-12" style="border-width:{{ data.size }}px" />
+{% else %}
+  <div class="tb-{{type.id}}" style="height:{{ data.size }}px"></div>
+{% endif %}

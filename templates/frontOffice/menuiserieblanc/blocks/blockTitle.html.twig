@@ -1,7 +1,12 @@
 {% if data.text %}
-    {% if data.level %}
-        <h{{data.level}} class="tb-{{type.id}}">{{data.text|raw}}</h{{data.level}}>
-    {% else %}
-        <p class="tb-{{type.id}}">{{data.text|raw}}</p>
-    {% endif %}
+	{% if data.level %}
+    {% set margin = data.level <= 2 ? "mb-4" : data.level <= 4 ? "mb-3" : "mb-2" %}
+		<h{{data.level}} class="tb-{{type.id}} h{{data.level}} text-theme-dark {{margin}}">
+			{{data.text|raw}}
+		</h{{data.level}}>
+	{% else %}
+		<p class="tb-{{type.id}} text-theme-dark font-bold mb-2">
+			{{data.text|raw}}
+		</p>
+	{% endif %}
 {% endif %}

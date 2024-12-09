@@ -1,0 +1,14 @@
+{% set variant = data.type|default('primary') %}
+{% set classes = "tb-" ~ type.id %}
+
+{% if data.type == 'tertiary' %}
+	{% set variant = 'minimal' %}
+{% elseif data.type == 'quaternary' %}
+	{% set variant = 'primary' %}
+	{% set classes = classes ~ ' Button--small' %}
+{% elseif data.type == 'quinary' %}
+	{% set variant = 'secondary' %}
+	{% set classes = classes ~ ' Button--small' %}
+{% endif %}
+
+{% include 'frontOffice/menuiserieblanc/components/Molecules/Button/Button.html.twig' with { href:data.url, type:"button", text:data.label, variant:variant, classes:classes, target:data.target} %}

@@ -1,11 +1,11 @@
-<div class="block-{{type.id}} my-4 lg:my-8">
-	{% for item in data.content  %}
-		{% set itemContain = [] %}
+<div class="block-{{type.id}} flex flex-col md:flex-row gap-4 md:gap-8">
+	{% for column in data  %}
+		{% set columnContain = [] %}
 		{% set renderTemplates = [] %}
 
-		{% for block in item  %}
+		{% for block in column  %}
 			{% if block.type.id %}
-				{% set itemContain = itemContain|merge([block.type.id]) %}
+				{% set columnContain = columnContain|merge([block.type.id]) %}
 				{% set renderTemplates = renderTemplates|merge([include('./blocks/' ~ block.type.id ~ '.html.twig', {
                   data: block.data, 
                   type: block.type
@@ -13,8 +13,7 @@
 			{% endif %}
 		{% endfor %}
 
-
-		<div data-tb-contain="{{itemContain|join(' ')}}">
+		<div class="md:flex-1" data-tb-contain="{{columnContain|join(' ')}}">
 			{{renderTemplates|join(' ')|raw}}
 		</div>
 	{% endfor %}
