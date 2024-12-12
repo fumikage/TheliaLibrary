@@ -1,0 +1,18 @@
+{% set imgTemplate %}
+  <img
+    src="{{data.url}}"
+    alt="{{data.title}}"
+    style="width:{{data.width|default('auto')}};height:{{data.height|default('auto')}};"
+    loading="lazy"
+  />
+{% endset %}
+
+<div class="tb-{{type.id}} w-max mx-auto my-4 md:my-8">
+  {% if data.link.url is defined %}
+    <a href="{{data.link.url}}" target="{{data.target|default('_self')}}">
+      {{ imgTemplate }}
+    </a>
+  {% else %}
+    {{ imgTemplate }}
+  {% endif %}
+</div>

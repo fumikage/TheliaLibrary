@@ -47,7 +47,7 @@
   --font-size-h0-m: rem-convert(42px);
   --font-size-h1-d: var(--font-size-3xl);
   --font-size-h1-m: rem-convert(36px);
-  --font-size-h2-d: var(--font-size-4xl);
+  --font-size-h2-d: var(--font-size-2xl);
   --font-size-h2-m: rem-convert(34px);
   --font-size-h3-d: var(--font-size-xl);
   --font-size-h3-m: var(--font-size-lg);

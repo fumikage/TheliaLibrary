@@ -1,0 +1,8 @@
+<div
+  class="tb-{{type.id}} p-4 my-4"
+  {% if data.style.backgroundColor is defined %}
+    style="background-color:{{data.style.backgroundColor}}"
+  {% endif %}
+>
+  {{data.value|raw}}
+</div>

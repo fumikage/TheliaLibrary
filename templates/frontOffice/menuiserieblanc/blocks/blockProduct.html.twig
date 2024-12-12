@@ -1,0 +1,17 @@
+<div class="block-{{type.id}} grid grid-cols-2 xl:grid-cols-4 gap-4">
+	{% for productId in data.productList %}
+		{# TODO : gérer cas 404 quand ça sera possible de le faire #}
+		{% set product = resources('/api/front/products/' ~ productId) %}
+		{% set images = resources('/api/front/product_images', {'product.id':productId}) %}
+
+		{% set title = product.i18ns.title %}
+		{% set url = product.publicUrl %}
+    {# TODO : revoir placeholder #}
+    {% set img = images[0] is defined 
+      ? { url:"/legacy-image-library/product_image_" ~ images[0].id ~ "/full/%5E*!594,594/0/default.webp", alt:title }
+      : { url:"https://place-hold.it/250x250", alt:"placeholder" }
+    %}
+
+		{% include 'frontOffice/menuiserieblanc/components/Organisms/Card/SimpleProduct/SimpleProduct.html.twig' with { title:title, url:url, img:img} %}
+	{% endfor %}
+</div>

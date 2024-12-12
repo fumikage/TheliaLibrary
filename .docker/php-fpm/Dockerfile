@@ -17,13 +17,14 @@ RUN pecl install imagick
 RUN docker-php-ext-enable imagick
 
 # GD extension needed for html2pdf
-RUN apk add --no-cache freetype libpng libjpeg-turbo freetype-dev libpng-dev libjpeg-turbo-dev && \
+RUN apk add --no-cache freetype libpng libwebp libjpeg-turbo freetype-dev libpng-dev libwebp-dev libjpeg-turbo-dev && \
   docker-php-ext-configure gd \
     --with-freetype \
+    --with-webp \
     --with-jpeg \
   NPROC=$(grep -c ^processor /proc/cpuinfo 2>/dev/null || 1) && \
   docker-php-ext-install -j$(nproc) gd && \
-  apk del --no-cache freetype-dev libpng-dev libjpeg-turbo-dev
+  apk del --no-cache freetype-dev libpng-dev libwebp-dev libjpeg-turbo-dev
 
 
 # XDebug extension

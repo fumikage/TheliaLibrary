@@ -1,0 +1,9 @@
+<{{data.type}} class="tb-{{type.id}} {{data.type == 'ol' ? 'list-decimal' : 'list-disk'}} list-inside text-theme-dark">
+	{% for value in data.values %}
+		<li>
+      <div class="inline-block align-top">
+        {{value|raw}}
+      </div>
+		</li>
+	{% endfor %}
+</{{data.type}}>

@@ -47,4 +47,6 @@
 
 .DS_Store
 web/templates-assets
+web/image-library
 web/legacy-image-library
+local/library

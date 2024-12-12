@@ -1,0 +1,27 @@
+<div class="block-{{type.id}} mb-4">
+	<div class="h3 text-theme-dark mb-4">{{data.title}}</div>
+	{% for item in data.group %}
+		{% set itemContain = [] %}
+		{% set renderTemplates = [] %}
+		{% set accordionTitle = item.title %}
+
+		{% for block in item.content %}
+			{% if block.type.id %}
+				{% set itemContain = itemContain|merge([block.type.id]) %}
+				{% set renderTemplates = renderTemplates|merge([include('./blocks/' ~ block.type.id ~ '.html.twig', {
+              data: block.data, 
+              type: block.type
+            })]) %}
+			{% endif %}
+		{% endfor %}
+
+		{% set content %}
+		<div data-tb-contain="{{itemContain|join(' ')}}">
+			{{renderTemplates|join(' ')|raw}}
+		</div>
+		{% endset %}
+
+		{% include 'frontOffice/menuiserieblanc/components/Molecules/Accordion/Accordion.html.twig' with { title:accordionTitle, content:content, iconPlus:'plus', iconMinus:'minus'} %}
+
+	{% endfor %}
+</div>
