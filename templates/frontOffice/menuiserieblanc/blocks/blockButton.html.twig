@@ -1,5 +1,5 @@
 {% set variant = data.type|default('primary') %}
-{% set classes = "tb-" ~ type.id %}
+{% set classes = "tb-" ~ type.id ~ " my-4"%}
 
 {% if data.type == 'tertiary' %}
 	{% set variant = 'minimal' %}
