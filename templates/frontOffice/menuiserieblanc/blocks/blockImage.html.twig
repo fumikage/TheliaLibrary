@@ -7,9 +7,9 @@
   />
 {% endset %}
 
-<div class="tb-{{type.id}} w-max mx-auto my-4 md:my-8">
+<div class="tb-{{type.id}} flex justify-center my-4 md:my-8">
   {% if data.link.url is defined %}
-    <a href="{{data.link.url}}" target="{{data.target|default('_self')}}">
+    <a class="block" href="{{data.link.url}}" target="{{data.target|default('_self')}}">
       {{ imgTemplate }}
     </a>
   {% else %}
