@@ -3,13 +3,20 @@
 {% set imgId = images|first.id|default(null)  %}
 
 
-<ul class="absolute top-0 left-0 md:transform-none hidden -translate-x-full lg:translate-x-0 sm:block">
+
+<div>
+  <img id="MainImage" src="{{ imgId ? "/legacy-image-library/product_image_"~imgId~"/full/%5E*!594,594/0/default.webp" :asset("dist/images/placeholder2.webp")}}" loading="lazy"  alt="{{ attr('product', 'title') }}"/>
+</div>
+<ul class="md:transform-none hidden  lg:translate-x-0 sm:flex mb-8">
+ <button class="ProductGallery-nav pr-4 text-theme-dark hidden" id="nav-prev">
+    <span class="w-5 h-5">{{ ux_icon('chevron-left') }}</span>
+  </button>
   {% for image in images %}
     <li class="ProductGallery-item cursor-pointer{% if loop.index== 1 %} is-active{% endif %}">
       <img class="ProductGallery-thumbnail" data-image-id="{{ image.id }}" src="{{ "/legacy-image-library/product_image_"~image.id~"/full/%5E*!92,92/0/default.webp"}}" loading="lazy" />
     </li>
   {% endfor %}
+   <button class="ProductGallery-nav pl-4 text-theme-dark hidden"  id="nav-next">
+    <span class="w-5 h-5">{{ ux_icon('chevron-right') }}</span>
+  </button>
 </ul>
-<div>
-  <img id="MainImage" src="{{ imgId ? "/legacy-image-library/product_image_"~imgId~"/full/%5E*!594,594/0/default.webp" :asset("dist/images/placeholder2.webp")}}" loading="lazy"  alt="{{ attr('product', 'title') }}"/>
-</div>
