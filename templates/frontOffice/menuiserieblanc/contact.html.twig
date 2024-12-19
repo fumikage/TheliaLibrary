@@ -1,0 +1,34 @@
+{%  extends 'base.html.twig' %}
+
+{% block title %}
+  {{ 'Contact' | trans }}
+{% endblock %}
+
+{% block body %}
+
+  <div class="relative">
+   
+
+	  {% include '@components/Layout/Subheader/TitleOnly/SubheaderTitle.html.twig' with {title: "Contact us" | trans, position: "centered" } %}
+  </div>
+
+  <div class="grid w-full max-w-screen-lg grid-cols-1 gap-8 lg:gap-14 mx-auto md:grid-cols-2 mt-8 lg:mt-14 mb-20 lg:mb-32 px-[25px] lg:px-0">
+    <div class="flex flex-col gap-6">
+      <form class="bg-theme-lighter rounded-lg px-10 pt-8 pb-6 flex flex-col gap-6">
+          {% include '@components/Molecules/Fields/FieldInput/FieldInput.html.twig' with {name: "firstName", label: "Firstname" | trans} %}
+        {% include '@components/Molecules/Fields/FieldInput/FieldInput.html.twig' with {name: "lastName", label: "Lastname" | trans} %}
+        {% include '@components/Molecules/Fields/FieldInput/FieldInput.html.twig' with {name: "email", label: "E-mail" | trans, disabled: true} %}
+        {% include '@components/Molecules/Fields/FieldInput/FieldInput.html.twig' with {name: "phone", label: "Phone number" | trans}  %}
+         {% include '@components/Molecules/Fields/FieldInput/FieldInput.html.twig' with {name: "message", label: "Message" | trans, placeholder: "Merci de lister l'ensemble des produits pour lesquels vous souhaitez un devis avec leur nom, quantité et dimension." }  %}
+         
+        {% include "@components/Molecules/Button/Button.html.twig" with {text: 'Send' | trans, href: '#', classes: 'Button--large mt-1.5'} %}
+      </form>
+    </div>
+   
+  </div>
+
+{% endblock %}
+
+
+
+
