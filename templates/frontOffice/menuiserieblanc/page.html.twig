@@ -1,13 +1,13 @@
 {%  extends 'base.html.twig' %}
 
 {% set pageData = getPageData() %}
+{% set pageImage = getImages("page", pageData.id,664,390,'webp') %}
 {% set pageHTML = getTheliaBLocksRenderedContent(pageData.getVirtualColumn('block_group_content')) %}
 
 {% block title %}{{ pageData.title }}{% endblock %}
 
 {% block body %}
-
-  {% include '@components/Layout/Subheader/ContentPage/SubheaderContentPage.html.twig' with {title: pageData.title, description: pageData.chapo }  %}
+  {% include '@components/Layout/Subheader/ContentPage/SubheaderContentPage.html.twig' with {title: pageData.title, description: pageData.chapo, img: {src: pageImage|first.URL, alt: pageImage|first.ID} }  %}
 
 	<div class="px-[25px] lg:pr-[225px] lg:pl-[250px] xl:pr-[325px] xl:pl-[350px] flex gap-[173px] mt-[25px] lg:mt-[54px] mb-[80px] lg:mb-[120px]">
 		<article class="wysiwyg">
